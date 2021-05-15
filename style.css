@@ -1,0 +1,12 @@
+/* Giving the body the specified background color, adding font sizes for the h1 and h3 elements we'll be using */
+body {
+  background: #f1f1f1;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+h3 {
+  font-size: 30px;
+}
