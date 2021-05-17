@@ -10,3 +10,16 @@ h1 {
 h3 {
   font-size: 30px;
 }
+
+.box{
+  height: 100px;
+  background-color: white;
+  
+}
+
+  .banner{
+    background: url('styleElements/circles.svg') white;
+    height: 100%;
+    width: 180%;
+    background-repeat: no-repeat;
+  }
