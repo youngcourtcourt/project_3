@@ -11,6 +11,7 @@ h3 {
   font-size: 30px;
 }
 
+
 .map-box{
   height: 1000px;
   background-color: #8FA1DC;
@@ -22,12 +23,18 @@ h3 {
 }
 .risk-box{
   background-color: #B8E8FF;
-  height: 200px;
-  width: 200px;
+  height: auto;
+  width: 210px;
   margin: 2%;
-  padding: 2%;
+  padding: 1%;
 }
 
+.explanation-box{
+  background-color: #f7dc6f;
+  margin: 3%;
+  padding: 3%;
+  width: 740px;
+}
 .nav-stuff{
   background-color: #B1F1EE;
 }
@@ -38,6 +45,8 @@ h3 {
   height: auto;
   background-color: none;
   display: block;
+  text-align: center;
+  margin: auto;
 }
 
 .markers-icon{
@@ -46,18 +55,21 @@ h3 {
   height: auto;
   background-color: none;
   display: block;
+  text-align: center;
+  margin: auto;
 
 }
 
 .pound-icon{
   z-index: 1;
-  width: 50%;
+  width: 40%;
   height: auto;
   background-color: none;
   display: block;
+  text-align: center;
+  margin: auto;
 
 }
-
 
   .banner{
     background: url('styleElements/circles.svg') white;

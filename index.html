@@ -38,7 +38,7 @@
   <div class="jumbotron jumbotron-fluid banner">
     <div class="container">
       <h1 class="display-4 main-header">When's the next Big One?</h1>
-      <p class="lead">Click on your county to see if you're at risk</p>
+      <p class="lead left">Click on your county to see if you're at risk</p>
     </div>
   </div>
   <div class="containter">
@@ -53,20 +53,33 @@
       <!-- Risk boxes -->
       <div class="col-md-6">
         <div class="row">
-
+          <div class="explanation-box">
+            <p>Earthquakes, much like other natural disasters, 
+              are unpredictable. We can however, use the data available 
+              to us to forecast the liklihood of an earthquake's occurrence in a given area.</p>
+          </div>
         </div>
         <div class="row">
+          <!-- Liklihood -->
           <div class="risk-box">
             <img class="dice-icon" src="styleElements/dice.svg"></img>
-            <!-- <h5 class="center">Liklihood of Quake</h5> -->
+            <br>
+            <h2 class="center">0.75</h2>
+            <p class="center">Liklihood of Quake</p>
           </div>
+          <!-- Nearest Fault -->
           <div class="risk-box">
             <img class="markers-icon" src="styleElements/markers.svg"></img>
-            <h5 class="center">Nearest Fault</h5>
+            <br>
+            <h2 class="center">San Andreas Fault</h2>
+            <p class="center">Is your nearest fault</p>
           </div>
+          <!-- Num earthquakes -->
           <div class="risk-box">
             <img class="pound-icon" src="styleElements/pound.svg"></img>
-            <h5 class="center">Num of Quakes within last month</h5>
+            <br>
+            <h2 class="center">12</h2>
+            <p class="center">Earthquakes have occurred in this area in the last month</p>
           </div>
         </div>
       </div>
