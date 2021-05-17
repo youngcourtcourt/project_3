@@ -1,25 +1,42 @@
 /* Giving the body the specified background color, adding font sizes for the h1 and h3 elements we'll be using */
 body {
-  background: #f1f1f1;
+  background: #EEFFF8;
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 100px;
 }
 
 h3 {
   font-size: 30px;
 }
 
-.box{
-  height: 100px;
-  background-color: white;
+.map-box{
+  height: 1000px;
+  background-color: #8FA1DC;
   
+}
+
+.risk-box{
+  background-color: #B8E8FF;
+  height: 200px;
+  width: 200px;
+  margin: 2%;
+}
+
+.nav-stuff{
+  background-color: #B1F1EE;
 }
 
   .banner{
     background: url('styleElements/circles.svg') white;
-    height: 100%;
-    width: 180%;
+    /* height: 100%;
+    width: 180%; */
+    background-size: 200%;
     background-repeat: no-repeat;
+    font-family: 'Bebas Neue', cursive;
+  }
+
+  .center{
+    text-align: center;
   }

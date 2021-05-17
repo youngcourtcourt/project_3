@@ -5,19 +5,24 @@
   <meta charset="UTF-8">
   <title>Your Title Here</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<!-- Our CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light nav-stuff">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Welcome</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Locate a Quake!</a>
@@ -29,10 +34,11 @@
       </div>
     </div>
   </nav>
+  <!-- Banner -->
   <div class="jumbotron jumbotron-fluid banner">
     <div class="container">
-      <h1 class="display-4">Fluid jumbotron</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      <h1 class="display-4">When's the next Big One?</h1>
+      <p class="lead">Click on your county to see if you're at risk</p>
     </div>
   </div>
   <div class="containter">
@@ -40,11 +46,26 @@
     <!-- Main row -->
     <div class="row">
       <!-- Main columns -->
+      <!-- Map -->
       <div class="col-md-6">
-        <h1>MAP</h1>
+        <h1 class="map-box center">MAP</h1>
       </div>
-      <div class="col-md-6 box">
+      <!-- Risk boxes -->
+      <div class="col-md-6">
+        <div class="row">
 
+        </div>
+        <div class="row">
+          <div class="risk-box">
+            <h5>Risk 1</h5>
+          </div>
+          <div class="risk-box">
+            <h5>Risk 2</h5>
+          </div>
+          <div class="risk-box">
+            <h5>Risk 3</h5>
+          </div>
+        </div>
       </div>
     </div>
   </div>
