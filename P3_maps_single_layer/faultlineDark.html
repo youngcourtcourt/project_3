@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- https://bl.ocks.org/xujenna/b45f15f1d47aea1cde2b0b3bfb3fbfa2 -->
+<html lang="en">
+
+//Need to add data source
+
+<head>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    #title {
+      position:absolute;
+      width:700px;
+      left:0;
+      right:0;
+      margin:0 auto;
+      text-align: center;
+      font-family:monospace;
+      /*font-weight: bold;*/
+      font-size:30px;
+      /*text-transform:uppercase;*/
+      /*letter-spacing: 2px;*/
+      /*text-decoration: underline;*/
+      top:50px;
+      color:white;
+    }
+
+
+    .legend {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 3px;
+      bottom: 30px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      padding: 15px 20px 5px 20px;
+      position: absolute;
+      right: 10px;
+      z-index: 1;
+
+    }
+
+    .legend h4 {
+      margin: 0 0 10px;
+    }
+
+    .legend p {
+      margin: 0px 0px 0px 40px;
+      position: absolute;
+      display: block;
+      top: 25%;
+      vertical-align: center;
+    }
+
+    .legend div {
+      position: relative;
+      padding:5px;
+    }
+
+    .legend div span {
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+      opacity: 0.8;
+    }
+    </style>
+    <title>Fault Lines Real Time</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<body>
+    <div id="map"> </div>
+    <div id="title">Fault Lines Real Time</div>
+    <div id='legend' class='legend'>
+      <h4>Magnitude</h4>
+    </div>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoieHVqZW5uYSIsImEiOiJjamY5dmdhZHYzNGs2MzNwZGhnajg2NGwyIn0.lpy8HGW02YVRw819jbPLGQ';
+
+    var map = new mapboxgl.Map({
+        container: 'map', // you need this
+        style: 'mapbox://styles/mapbox/dark-v9', // you also need this
+        center: [-74.0006213, 40.7229971], // [long, lat] Different than leaflet, different than google maps, same as geojson!
+        zoom: 2,
+    });
+
+    var max = 5.2;
+    var fifth = max/5;
+    var quantiles = [];
+    for (i = 0; i < 5; i++) {
+      var quantile = (fifth + i) * fifth;
+      quantiles.push(Math.round(quantile*10)/10);
+    }
+
+    var colors = ["#f0ff00", "#ffce00", "#ff9a00", "#ff5a00", "#ff0000"];
+
+    var minRadius = 5;
+    var maxRadius = 20;
+    var minMag = 0;
+    var maxMag = 5.2;
+
+    var rateOfChange = (maxRadius - minRadius) / (maxMag - minMag);
+    var radiusAtZero = maxRadius - (rateOfChange * maxMag);
+
+    var legend = document.getElementById('legend');
+    function circleSize(quantile) {
+      var radius = (rateOfChange * quantile) + radiusAtZero;
+      var diameter = radius * 2;
+      return diameter;
+    }
+    quantiles.forEach(function(quantile,i) {
+      legend.insertAdjacentHTML('beforeend', '<div><span style="width:' + circleSize(quantile) + 'px;height:' + circleSize(quantile) + 'px;margin: 0 ' + [(20 - circleSize(quantile)) / 2] + 'px; background-color:' + colors[i] + '"></span><p>' + quantile + '</p></div>');
+    });
+
+
+
+    //NEED TO REVAMP THIS AREA AND GET THE DATA FROM GEOJSON
+    // Source is where the data is coming from, layer is what you're going to do with it.
+    map.on('load', function() {
+        map.addSource('faults', {
+          'type': 'geojson',
+          'data': 'PB2002_boundaries.json'
+        });
+        map.addLayer({
+          'id': 'faults',
+          'type': 'line',
+          'source': 'faults',
+          'paint': {
+            'line-color': 'white',
+            }
+        })
+
+        map.addSource('earthquake', {
+            'type': 'geojson',
+            'data': 'allday.json'
+        });
+        map.addLayer({
+            'id': 'earthquake',
+            'type': 'circle',
+            'source': 'earthquake',
+            'paint': {
+            'circle-radius': {
+              // make the circles larger as the user zooms from 12 to 22
+              'property': 'mag',
+              'stops': [
+                [minMag, 5],
+                [maxMag, 20]
+              ]
+            },
+            'circle-color': {
+              'property': 'mag',
+              'stops': [
+                [quantiles[0], colors[0]],
+                [quantiles[1], colors[1]],
+                [quantiles[2], colors[2]],
+                [quantiles[3], colors[3]],
+                [quantiles[4], colors[4]]
+              ]
+            },
+            'circle-opacity': {
+              'stops': [
+                [minMag, 0.1],
+                [maxMag, 1]
+              ]
+            }
+          }
+        })
+    });
+    </script>
+</body>
+
+</html>
