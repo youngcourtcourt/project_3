@@ -8,6 +8,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../static/css/earthquakePlayground.css">
 </head>
 <body>
@@ -45,18 +47,32 @@
   <div class="containter">
     <div class="row">
         <div class='col-md-4'>
-            <input class="form-control form-control-lg" type="text" placeholder="Magnitude">
+            <br>
+            <br>
             <br>
             <input class="form-control form-control-lg" type="text" placeholder="Magnitude">
+            <br>
+            <input class="form-control form-control-lg" type="text" placeholder="Depth">
         </div>
         <div class='col-md-4'>
+
+            <input class="form-control form-control-lg" type="text" placeholder="Distance to Epicenter">
+            <br>
             <svg height='400' width='400'>
-                <circle cx="150" cy="200" r="120" stroke="none" fill="#F7DC6F" />
-                <text id='waveform' x="150" y='200' text-anchor="middle" stroke="#51c5cf" stroke-width="2px" dy=".3em">HI</text>
+                <circle cx="200" cy="170" r="160" stroke="none" fill="#FF7F50" />
+                <circle cx="200" cy="170" r="140" stroke="none" fill="#f8c471" />
+                <circle cx="200" cy="170" r="120" stroke="none" fill="#F7DC6F" />
+                <text id='waveform' x="200" y='170' text-anchor="middle" dy=".3em">ML</text>
             </svg> 
 
         </div>
         <div class='col-md-4'>
+            <br>
+            <br>
+            <br>
+            <input class="form-control form-control-lg" type="text" placeholder="Azimuthal Gap">
+            <br>
+            <input class="form-control form-control-lg" type="text" placeholder="Root Mean Square">
 
         </div>
       
