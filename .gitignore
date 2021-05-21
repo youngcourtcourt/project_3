@@ -127,5 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-/data/key_stats_data/
-/data/mag5.0data/
+
+
