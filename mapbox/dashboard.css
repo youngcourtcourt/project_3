@@ -1,0 +1,157 @@
+/* remove default margin and padding from body */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* set map, body, and html to 100% of the screen size */
+#map,
+body,
+html {
+  height: 100%;
+}
+
+#main-header{
+  font-family: 'Arvo', serif;
+  font-weight: bold;
+  font-style: italic;
+  padding-right: 0.6%;
+  font-size: 65px;
+  margin-bottom: -80px;
+  color: #C70039;
+  z-index: 5; 
+}
+
+#main-header-back{
+  font-family: 'Arvo', serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 65px;
+  z-index:-100;
+  padding-left: 0.6%;
+  color:#f89571;
+  
+}
+
+.center{
+  text-align: center;
+  /* margin: 50px; */
+}
+
+.left-padding{
+  padding-left: 30%;
+}
+
+.box{
+  /* background-color: #3E5A84; */
+  height: 600px;
+  width: 550px;
+  padding: 5%;
+  margin: 1%;
+  z-index: -1;
+}
+
+.metrics-box{
+  height: 50px;
+  width: 550px;
+  padding: 5%;
+  margin: 1%;
+  background-color: rgb(247, 226, 109);
+  /* z-index: -1; */
+}
+
+/* .bar-chart-box{
+  height: 50px;
+  width: 50px;
+  padding: 5%;
+  margin: 1%;
+  background-color: rgb(247, 226, 109);
+} */
+
+#metrics-row{
+  margin: 30px;
+  padding: 20px;
+  font-family: 'DM Serif Text';
+  font-size: 40px;
+  text-align: center;
+}
+
+#continents{
+  cursor: pointer;
+}
+li:hover{
+  color:#D60038;
+}
+
+.continent-box{
+  margin: 3%;
+  padding: 1%;
+  font-family: 'DM Serif Text';
+  /* font-size: 5px; */
+  text-align: center;
+  background-color: #AFE1AF;
+  cursor:pointer;
+}
+
+.bar-chart-box{
+  margin: 3%;
+  padding: 1%;
+  font-family: 'DM Serif Text';
+  /* font-size: 5px; */
+  text-align: center;
+  background-color: #faee69;
+  cursor:pointer;
+}
+
+.pie-chart-box{
+  margin: 3%;
+  padding: 1%;
+  font-family: 'DM Serif Text';
+  /* font-size: 5px; */
+  text-align: center;
+  background-color: #ffb050;
+  cursor:pointer;
+}
+
+
+.continent-title-box{
+  margin: 3%;
+  padding: 1%;
+  font-family: 'DM Serif Text';
+  /* font-size: 5px; */
+  text-align: center;
+  background-color: #f78b83;
+  cursor:pointer;
+}
+
+.hvr-grow {
+  /* display: inline-block; */
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.1);
+}
+
+
+
+.nav-stuff{
+  background-color: #B1F1EE;
+}
+
+.banner{
+  background: url('../static/styleElements/circles4.svg') white;
+  /* height: 100%;
+  width: 180%; */
+  background-size: 200%;
+  background-repeat: no-repeat;
+  font-family: 'Bebas Neue', cursive;
+}

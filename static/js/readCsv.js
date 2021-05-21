@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Add hillshading</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
-<style>
-body { margin: 0; padding: 0; }
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-</style>
-</head>
-<body>
-<div id="map"></div>
-<!-- <script>
-	mapboxgl.accessToken = 'pk.eyJ1Ijoicmhpbm9iYWNrIiwiYSI6ImNrbjIwMWZmYzBlYXQyb21yaDg1MjBscG4ifQ.hU5CRI2iUlmr9igTrw5zUA';
+mapboxgl.accessToken = 'pk.eyJ1Ijoicmhpbm9iYWNrIiwiYSI6ImNrbjIwMWZmYzBlYXQyb21yaDg1MjBscG4ifQ.hU5CRI2iUlmr9igTrw5zUA';
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/cjaudgl840gn32rnrepcb9b9g', // the outdoors-v10 style but without Hillshade layers
@@ -38,8 +22,19 @@ body { margin: 0; padding: 0; }
             'waterway-river-canal-shadow'
         );
     });
-</script> -->
-<!-- Our JS -->
-<script type="text/javascript" src="terrainHills.js"></script>
-</body>
-</html>
+
+
+d3.csv("../data/aggregateCountyData.csv").then(function(data){
+    
+    console.log(data)
+
+    for (var i=0;i<data.length;i++){
+
+        numEvents=Math.round(data[i]['Total Damaging Events'])
+        latitude=data[i]['Latitude']
+        longitude=data[i]['Longitude']
+        countyName=(data[i]['County Name']).replaceAll('_', ' ')
+    }
+
+
+})

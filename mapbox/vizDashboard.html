@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Quake the Shake</title>
+
+  <!-- Boostrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href='https://fonts.googleapis.com/css?family=DM Serif Text' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orelega+One" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=DM Serif Text' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <!--  JQuery -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin="" />
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <!-- Marker Cluster CSS -->
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+
+
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="dashboard.css">
+  <link rel="stylesheet" type="text/css" href="wildstyle.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light nav-stuff">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../templates/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="vizDashboard.html">Locate a Quake!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../templates/machineLearning.html">Machine Learning</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="jumbotron jumbotron-fluid banner">
+    <div class="container">
+      <h1 class="display-4 main-header">Locate A Quake</h1>
+      <!-- <p class="lead left">Find a quake!</p> -->
+    </div>
+  </div>
+
+  <!-- The div where we will inject our map -->
+  <div class="container-fluid">
+    <!-- <div class="row">
+      <div class="col-md-12">
+        <h1 id="main-header">Quake Locator</h1>
+        <h1 id="main-header-back">Quake Locator</h1>
+        <br>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="col-md-3">
+        <div class="continent-title-box">
+          <h3>Continents</h3>
+        </div>
+        <div class="continent-box hvr-grow">
+          <h4 id="europe">Europe</h4>
+        </div>
+        <div class="continent-box hvr-grow">
+          <h4 id="asia">Asia</h4>
+        </div>
+        <div class="continent-box hvr-grow">
+          <h4 id="northAmerica">North America</h4>
+        </div>
+        <div class="continent-box hvr-grow">
+          <h4 id="southAmerica">South America</h4>
+        </div>
+        <div class="continent-box hvr-grow">
+          <h4 id="africa">Africa</h4>
+        </div>
+        <div class="continent-box hvr-grow">
+          <h4 id="oceania">Oceania</h4>
+        </div>
+        <!-- <li id="europe">Europe</li>
+          <li id="asia">Asia</li>
+          <li id="northAmerica">North America</li>
+          <li id="southAmerica">South America</li>
+          <li id="africa">Africa</li> -->
+        <!-- <li id="antarctica">Antarctica</li> -->
+        <!-- <li id="oceania">Oceania</li> -->
+      
+      </div>
+      <div class="col-md-9">
+        <!-- <div id="toggle"></div> -->
+        <div id="map"></div>
+
+      </div>
+    </div>
+
+   <div class="row">
+     <div class="col-md-6">
+      <h4 class="center pie-chart-box">Magnitude, Population and Disaster Relief Funds</h4>
+     </div>
+     <div class="col-md-6">
+     <h4 class="center pie-chart-box">Percentage of Wave Form</h4>
+    </div>
+   </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="chart"></div>
+      </div>
+      
+      <div class="col-md-6">
+        <canvas id="myPieChart" width="200" height="200"></canvas>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="center bar-chart-box">Top 20 Countries</h3>
+      </div>
+      <div class="col-md-6">
+        <h3 class="center bar-chart-box">Bottom 20 Countries</h3>
+      </div>
+    </div>
+
+    <div><canvas id="myChart" width="300" height="300"></canvas></div>
+
+    <!-- <div">
+      <canvas id="myPieChart" width="20" height="10"></canvas>
+    </div> -->
+    
+
+
+
+
+  </div>
+
+
+
+  <!-- Shake Code -->
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- Bootstrap -->
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.7.2/d3.min.js"></script>
+
+  <!--D3 cdn-->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- Chart.js Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.min.js"
+    integrity="sha512-RGbSeD/jDcZBWNsI1VCvdjcDULuSfWTtIva2ek5FtteXeSjLfXac4kqkDRHVGf1TwsXCAqPTF7/EYITD0/CTqw=="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+
+
+  <!-- Marker Cluster JS -->
+  <script type="text/javascript"
+    src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- <script type="text/javascript" src="d3pie.js"></script> -->
+  <!-- <script type="text/javascript" src="pieChart.js"></script> -->
+
+
+
+
+  <!-- API key -->
+  <script type="text/javascript" src="config.js"></script>
+  <!-- Our JS -->
+  <script type="text/javascript" src="logic.js"></script>
+  <script type="text/javascript" src="barChart.js"></script>
+  <!-- <script type="text/javascript" src="pieChart.js"></script> -->
+  <script src="static/js/shake.js"></script>
+  
+		<script type="text/javascript" src="apptershocks.js"></script>
+
+</body>
+
+</html>
