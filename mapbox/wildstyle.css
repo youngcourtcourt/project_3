@@ -1,0 +1,66 @@
+#quakers2shakers {
+  border-radius: 20px;
+}
+
+.chart::before {
+  position: absolute;
+  font-size: 20px;
+  top: 20px;
+  left: 120px;
+  z-index: -1;
+  display:flex;
+  width: 900px;
+  height: 600px;
+  content: " ";
+  /* background-image: url("https://images.pexels.com/photos/41949/earth-earth-at-night-night-lights-41949.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"); */
+  background-repeat: no-repeat;
+  background-position: 50% 10;
+  background-size: fill;
+  opacity: 0.7;
+}
+
+.tooltip {
+  position: absolute;
+  width: 135px;
+  height: 70px;
+  padding: 2px;
+  padding-top: 8px;
+  font: 16px sans-serif;
+  color: white;
+  text-align: center;
+  background: #4661ab;
+  border: 0;
+  border-radius: 10px;
+}
+
+.axis-text {
+  font-family: sans-serif;
+  font-style: Raleway;
+  font-size: 20px;
+  font-weight: bold;
+  fill: #c6e041;
+  text-anchor: middle;
+}
+
+.active {
+  font-weight: bold;
+  font-size: 20px;
+  fill: #000;
+  fill: #c6e041;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+  cursor: pointer;
+}
+
+.inactive {
+  font-weight: lighter;
+  font-size: 22px;
+  fill: #c6e041;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive:hover {
+  fill: #e75480;
+  cursor: pointer;
+}
