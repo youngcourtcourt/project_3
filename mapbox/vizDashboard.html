@@ -22,7 +22,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <!--  JQuery -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <!-- Leaflet CSS -->
@@ -59,7 +60,7 @@
             <a class="nav-link active" aria-current="page" href="../templates/index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="mapbox/vizDashboard.html">Locate a Quake!</a>
+            <a class="nav-link" href="vizDashboard.html">Locate a Quake!</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../templates/machineLearning.html">Machine Learning</a>
@@ -68,16 +69,22 @@
       </div>
     </div>
   </nav>
+  <div class="jumbotron jumbotron-fluid banner">
+    <div class="container">
+      <h1 class="display-4 main-header">Locate A Quake</h1>
+      <!-- <p class="lead left">Find a quake!</p> -->
+    </div>
+  </div>
 
   <!-- The div where we will inject our map -->
-  <div class="container">
-    <div class="row">
+  <div class="container-fluid">
+    <!-- <div class="row">
       <div class="col-md-12">
         <h1 id="main-header">Quake Locator</h1>
         <h1 id="main-header-back">Quake Locator</h1>
         <br>
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="col-md-3">
         <div class="continent-title-box">
@@ -116,49 +123,7 @@
 
       </div>
     </div>
-    <!-- <div id="metrics-row" class="row">
-      <div class="col-md-2">
-        <div class="row">
-          <h1 id="magnitude" class="center left-padding">9.5</h1>
-        </div>
-        <div class="row">
-          <div class="metrics-box center">
-            <h3 class="center">Magnitude</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="row">
-          <h1 id="depth" class="center left-padding">22.35</h1>
-        </div>
-        <div class="row">
-          <div class="metrics-box center">
-            <h3 class="center">Depth</h3>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-md-2">
-        <div class="row">
-          <h1 id="form" class="center left-padding">S</h1>
-        </div>
-
-        <div class="row">
-          <div class="metrics-box center">
-            <h3 class="center">Wave Form</h3>
-          </div>
-        </div>
-      </div>
-
-    </div> -->
-    <!-- <div class="row">
-      <div class="col-md-6">
-
-      </div>
-      <div class="col-md-6">
-        <h4 class="country-box">WaveForms</h4>
-      </div>
-    </div> -->
    <div class="row">
      <div class="col-md-6">
       <h4 class="center pie-chart-box">Magnitude, Population and Disaster Relief Funds</h4>
@@ -187,7 +152,7 @@
       </div>
     </div>
 
-    <div><canvas id="myChart" width="500" height="300"></canvas></div>
+    <div><canvas id="myChart" width="300" height="300"></canvas></div>
 
     <!-- <div">
       <canvas id="myPieChart" width="20" height="10"></canvas>

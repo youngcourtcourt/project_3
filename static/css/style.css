@@ -72,7 +72,7 @@ h3 {
 }
 
   .banner{
-    background: url('styleElements/circles.svg') white;
+    background: url('../styleElements/circles.svg') white;
     /* height: 100%;
     width: 180%; */
     background-size: 270%;

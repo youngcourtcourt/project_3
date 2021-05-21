@@ -146,3 +146,12 @@ li:hover{
 .nav-stuff{
   background-color: #B1F1EE;
 }
+
+.banner{
+  background: url('../static/styleElements/circles4.svg') white;
+  /* height: 100%;
+  width: 180%; */
+  background-size: 200%;
+  background-repeat: no-repeat;
+  font-family: 'Bebas Neue', cursive;
+}
