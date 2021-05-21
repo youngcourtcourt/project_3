@@ -7,6 +7,7 @@ from sklearn import metrics
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import time
+import math
 from pprint import pprint
 
 #
@@ -335,7 +336,7 @@ Ses_DF["Magnitude"] = Ses_DF["Magnitude"].abs()
 Ses_DF["Depth"] = Ses_DF["Depth"].abs()
 
 
-X = Ses_DF[["Magnitude", "Depth", "Distance", "Azimuthal Gap", "Root Mean Square"]]
+X = Ses_DF[["Magnitude", "Depth", "Distance to Epicenter", "Azimuthal Gap", "Root Mean Square"]]
 y = Ses_DF["Waveform"]
 
 # test train split
@@ -355,3 +356,77 @@ predictedY = clf.predict(X_test)
 predicted = pd.DataFrame({"Predicted_Waveform":predictedY})
 print(predicted)
 print(Y_test, X_test)
+
+
+# merges predicted and actual Waveforms
+compared = predicted.merge(Y_test, "inner", right_index=True, left_index=True)
+compared = compared.reset_index(drop=True)
+compared.to_csv(path_or_buf="data/ml/stats/PredictionData.csv")
+# print(compared)
+# compared accuracy list passes a True if the prediction matches the actual waveform, and False if it doesn't
+# i is the index for the while loop
+# i_list creates an index within the data for later processing
+
+# PROTOTYPE CODE BELOW! DO NOT TOUCH OR UNCOMMENT!!!!!!!!!!
+#-------------------------------------------------------------------------
+# YOU HAVE BEEN WARNED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#--------------------------------------------------------------------------------------
+
+compared_accuracy = []
+i = 0
+i_list = []
+# while loop for passing correct or incorrect predictions
+# while i is less then length, so every element gets covered
+while i < len(compared):
+    # finds the values un compared Dataframe at index i
+    value = compared.loc[i]
+
+    # transposes value
+    value = value.T
+    # assigns actual value to com1 and predicted value to com2
+    com1 = value["Waveform"]
+    com2 = value["Predicted_Waveform"]
+    # compares com to com 2 if same then true if different false then adds 1 to i index
+    if com1 == com2:
+       compared_accuracy.append("True")
+       i_list.append(i)
+       i += 1
+
+    elif com1 != com2:
+       compared_accuracy.append("False")
+       i_list.append(i)
+       i += 1
+    else:
+        compared_accuracy.append("ERROR")
+        i_list.append(i)
+        i += 1
+
+#creates datafrome from list for accuracy and index list
+compared_accuracyDF = pd.DataFrame({"Match": compared_accuracy})
+i_listDF = pd.DataFrame({"Index": i_list})
+# merges compared with index,accuracy, and magnitude, depth
+compared = compared.merge(i_listDF, "inner", right_index=True, left_index=True)
+compared = compared.merge(compared_accuracyDF, "inner", right_index=True, left_index=True)
+compared = compared.merge(X, "inner", right_index=True, left_index=True)
+
+
+
+
+# writes compared to csv
+compared.to_csv(path_or_buf="data/ml/stats/PredictionData.csv")
+
+# creates a Key stats DF with Accurate Predicted Total
+
+# counts number of true and false values
+Accurate_Predicted_Total = compared["Match"].value_counts()
+# calculates actual/experimental %
+Accurate_Predicted_Total["Actual Percentage"] = (Accurate_Predicted_Total["True"]/compared["Index"].max())*100
+
+# grabs theoretical % from score variable above
+Accurate_Predicted_Total["Theoretical Percentage"] = score*100
+# calculates percent error (actual-theoretical)/theoretical
+# NOTE: any value of absolute value should bre read as positive even if negative
+Accurate_Predicted_Total["Percent Error"] = (((score*100)-(Accurate_Predicted_Total["True"]/compared["Index"].max())*100)/(score*100))*100
+Accurate_Predicted_Total["Percent Error"] = math.fabs(Accurate_Predicted_Total["Percent Error"])
+Accurate_Predicted_Total.to_csv(path_or_buf="data/ml/stats/Keystats.csv")
+
