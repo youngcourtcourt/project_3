@@ -146,3 +146,13 @@ h3 {
   margin: auto;
   }
  
+.display-text{
+  /* font-family: 'DM Serif Text'; */
+  font-family: 'Spartan', sans-serif;
+  font-size: 40px;
+}
+
+.display-text-county{
+  font-family: 'Spartan', sans-serif;
+  font-size: 30px;
+}

@@ -23,7 +23,7 @@ function onClick(event){
   var numEvents=(this._popup._content).split(',')[1]
   var rate=(this._popup._content).split(',')[2]
 
-  // Uncomment in case probability calculator boots up
+  // ######## Uncomment in case probability calculator boots up ########
 
   // var probability=(this._popup._content).split(',')[3]
   // d3.select("#probability")
@@ -65,7 +65,7 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
         var countyName=(data[i]['County Name']).replaceAll('_', ' ')
         countyList.push(countyName)
 
-        // Uncomment in case probability calculator boots up
+        // ######## Uncomment in case probability calculator boots up ########
 
         // var probability=data[i]['Probability']
 
