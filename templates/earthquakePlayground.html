@@ -3,12 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Machine Learning</title>
+  <title>Play With Quakes!</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../static/css/machineLearning.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/earthquakePlayground.css">
 </head>
 <body>
 
@@ -38,20 +40,43 @@
   </nav>
   <div class="jumbotron jumbotron-fluid banner">
     <div class="container">
-      <h1 class="display-4 main-header">Machine Learning</h1>
+      <h1 class="display-4 main-header">Earthquake Playground</h1>
       <!-- <p class="lead left">Click on your county to see if you're at risk</p> -->
     </div>
   </div>
   <div class="containter">
     <div class="row">
-      <div class="col-md-6">
-        <div class="ml-box">
+        <div class='col-md-4'>
+            <br>
+            <br>
+            <br>
+            <input class="form-control form-control-lg" type="text" placeholder="Magnitude">
+            <br>
+            <input class="form-control form-control-lg" type="text" placeholder="Depth">
+        </div>
+        <div class='col-md-4'>
+            <!-- User Inputs -->
+                <input name="variable" class="form-control form-control-lg" type="text" placeholder="Distance to Epicenter">
+                <!-- <input type="submit"> -->
+            <br>
+            <svg height='400' width='400'>
+                <circle cx="200" cy="170" r="160" stroke="none" fill="#FF7F50" />
+                <circle cx="200" cy="170" r="140" stroke="none" fill="#f8c471" />
+                <circle cx="200" cy="170" r="120" stroke="none" fill="#F7DC6F" />
+                <text id='waveform' x="200" y='170' text-anchor="middle" dy=".3em">ML</text>
+            </svg> 
 
         </div>
-      </div>
-      <div class="col-md-6">
-        
-      </div>
+        <div class='col-md-4'>
+            <br>
+            <br>
+            <br>
+            <input class="form-control form-control-lg" type="text" placeholder="Azimuthal Gap">
+            <br>
+            <input class="form-control form-control-lg" type="text" placeholder="Root Mean Square">
+
+        </div>
+      
     </div>
       
 

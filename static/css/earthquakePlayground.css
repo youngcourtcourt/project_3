@@ -1,5 +1,5 @@
 .banner{
-    background: url('../styleElements/circles3.svg') white;
+    background: url('../styleElements/circles5.svg') white;
     /* height: 100%;
     width: 180%; */
     background-size: 200%;
@@ -18,7 +18,11 @@
     
   }
   
+  #waveform{
+    font-size: 100px;
+    font-family: 'El Messiri', sans-serif;
+  }
 
   body{
-    background-color: #E5FFE3;
+    background-color: #f5f0ae;
   }

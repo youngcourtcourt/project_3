@@ -1,28 +1,17 @@
-mapboxgl.accessToken = 'pk.eyJ1Ijoicmhpbm9iYWNrIiwiYSI6ImNrbjIwMWZmYzBlYXQyb21yaDg1MjBscG4ifQ.hU5CRI2iUlmr9igTrw5zUA';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/cjaudgl840gn32rnrepcb9b9g', // the outdoors-v10 style but without Hillshade layers
-        center: [-119.5591, 37.715],
-        zoom: 6
-    });
+// Create a map object
+var myMap = L.map("map", {
+  center: [37.4946, -120.8460],
+  zoom: 7
+});
 
-    map.on('load', function () {
-        map.addSource('dem', {
-            'type': 'raster-dem',
-            'url': 'mapbox://mapbox.mapbox-terrain-dem-v1'
-        });
-        map.addLayer(
-            {
-                'id': 'hillshading',
-                'source': 'dem',
-                'type': 'hillshade'
-                // insert below waterway-river-canal-shadow;
-                // where hillshading sits in the Mapbox Outdoors style
-            },
-            'waterway-river-canal-shadow'
-        );
-    });
-
+L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+  tileSize: 512,
+  maxZoom: 18,
+  zoomOffset: -1,
+  id: "mapbox/streets-v11",
+  accessToken: API_KEY
+}).addTo(myMap);
 
 d3.csv("../data/aggregateCountyData.csv").then(function(data){
     
@@ -34,7 +23,25 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
         latitude=data[i]['Latitude']
         longitude=data[i]['Longitude']
         countyName=(data[i]['County Name']).replaceAll('_', ' ')
+
+        var marker= new L.Marker([latitude, longitude], {
+          icon: new L.DivIcon({
+              className: 'my-div-icon',
+              html: '<img class="palmTree" src="../static/styleElements/palmTree.svg"/>'
+          })
+        })
+
+        marker.addTo(myMap)
+
+        marker.bindPopup(`${countyName}`)
     }
 
 
 })
+
+// new L.Marker([37.4946, -120.8460], {
+//   icon: new L.DivIcon({
+//       className: 'my-div-icon',
+//       html: '<img class="palmTree" src="../static/styleElements/palmTree.svg"/>'
+//   })
+// }).addTo(myMap)
