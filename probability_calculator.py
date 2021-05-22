@@ -1,3 +1,22 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 yearly_totals = infoDF.count().max()
 holder = yearly_totals + holder
 i += 1

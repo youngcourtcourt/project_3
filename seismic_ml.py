@@ -324,13 +324,19 @@ from pprint import pprint
 # print(infoDF2)
 # infoDF2.to_csv(f"data/ml/input/trainer.csv")
 # case_sensitive_Waveforms = pd.DataFrame(case_sensitive_Waveforms)
-# Waveformtotals = case_sensitive_Waveforms.value_counts()
-# Waveformtotals = Waveformtotals.rename("Count")
-# Waveformtotals.to_csv(path_or_buf="data/ml/stats/Waveformtotals.csv")
+
 
 Ses_DF = pd.read_csv("data/ml/input/trainer.csv")
 
+Waveformtotals = Ses_DF["Waveform"]
 
+case_sensitive_Waveforms = []
+for x in Waveformtotals:
+   case_sensitive_Waveforms.append(x.lower())
+Waveformtotals = pd.DataFrame({"Waveforms":case_sensitive_Waveforms})
+Waveformtotals = Waveformtotals.value_counts()
+Waveformtotals = Waveformtotals.rename("Count")
+Waveformtotals.to_csv(path_or_buf="data/ml/stats/Waveformtotals.csv")
 
 Ses_DF["Magnitude"] = Ses_DF["Magnitude"].abs()
 Ses_DF["Depth"] = Ses_DF["Depth"].abs()
@@ -340,7 +346,7 @@ X = Ses_DF[["Magnitude", "Depth", "Distance to Epicenter", "Azimuthal Gap", "Roo
 y = Ses_DF["Waveform"]
 
 # test train split
-X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.3)
+X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.1)
 # model creation
 clf = SVC()
 
@@ -429,4 +435,9 @@ Accurate_Predicted_Total["Theoretical Percentage"] = score*100
 Accurate_Predicted_Total["Percent Error"] = (((score*100)-(Accurate_Predicted_Total["True"]/compared["Index"].max())*100)/(score*100))*100
 Accurate_Predicted_Total["Percent Error"] = math.fabs(Accurate_Predicted_Total["Percent Error"])
 Accurate_Predicted_Total.to_csv(path_or_buf="data/ml/stats/Keystats.csv")
+
+from grapher import graph
+graph()
+
+
 
