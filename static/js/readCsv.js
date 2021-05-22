@@ -13,9 +13,15 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   accessToken: API_KEY
 }).addTo(myMap);
 
+var countyList=[]
+
+function onClick(e){
+  console.log(this._latlng)
+}
+
 d3.csv("../data/aggregateCountyData.csv").then(function(data){
     
-    console.log(data)
+    // console.log(data)
 
     for (var i=0;i<data.length;i++){
 
@@ -23,23 +29,26 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
         latitude=data[i]['Latitude']
         longitude=data[i]['Longitude']
         countyName=(data[i]['County Name']).replaceAll('_', ' ')
+        countyList.push(countyName)
 
         var marker= new L.Marker([latitude, longitude], {
           icon: new L.DivIcon({
               className: 'my-div-icon',
               html: '<img class="palmTree" src="../static/styleElements/palmTree.svg"/>'
           })
-        })
+        }).on("click", onClick)
 
         marker.addTo(myMap)
 
         marker.bindPopup(`${countyName}`)
 
-        marker.on("click", function(){
-          d3.select("#test")
-            .selectAll("h1")
-            .text("HI")
-        })
+        // marker.on("click", function(){
+        //   d3.select("#test")
+        //     .selectAll("h1")
+        //     .text(`${marker._latlng}`)
+            
+        //   console.log(marker._latlng)
+        // })
     }
 
 
