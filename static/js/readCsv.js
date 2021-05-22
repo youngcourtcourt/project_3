@@ -12,3 +12,18 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   id: "mapbox/streets-v11",
   accessToken: API_KEY
 }).addTo(myMap);
+
+// d3.csv("../data/aggregateCountyData.csv").then(function(data){
+    
+//     console.log(data)
+
+//     for (var i=0;i<data.length;i++){
+
+//         numEvents=Math.round(data[i]['Total Damaging Events'])
+//         latitude=data[i]['Latitude']
+//         longitude=data[i]['Longitude']
+//         countyName=(data[i]['County Name']).replaceAll('_', ' ')
+//     }
+
+
+// })
