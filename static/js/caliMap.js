@@ -21,12 +21,24 @@ function onClick(event){
 
   var county=(this._popup._content).split(',')[0]
   var numEvents=(this._popup._content).split(',')[1]
+  var rate=(this._popup._content).split(',')[2]
 
+  // Uncomment in case probability calculator boots up
+
+  // var probability=(this._popup._content).split(',')[3]
+  // d3.select("#probability")
+  // .text(`${probability}`)
+
+
+  // console.log((this._popup._content).split(','))
   d3.select("#county")
   .text(`${county}`)
 
   d3.select("#numEvents")
   .text(`${numEvents}`)
+
+  d3.select("#rate")
+  .text(`${rate}%`)
 
   var lat=this._latlng.lat
   var lng=this._latlng.lng
@@ -46,11 +58,16 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
     for (var i=0;i<data.length;i++){
 
       // Set key metrics to variables
-        numEvents=Math.round(data[i]['Total Damaging Events'])
-        latitude=data[i]['Latitude']
-        longitude=data[i]['Longitude']
-        countyName=(data[i]['County Name']).replaceAll('_', ' ')
+        var numEvents=Math.round(data[i]['Total Damaging Events'])
+        var latitude=data[i]['Latitude']
+        var longitude=data[i]['Longitude']
+        var rate=Math.round(data[i]['Rate of Damaging Events'])
+        var countyName=(data[i]['County Name']).replaceAll('_', ' ')
         countyList.push(countyName)
+
+        // Uncomment in case probability calculator boots up
+
+        // var probability=data[i]['Probability']
 
         // Attach palm tree to every marker
 
@@ -67,7 +84,9 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
 
         // Bind popup to each marker
 
-        marker.bindPopup(`${countyName},${numEvents}` ).on("click", closePopup)
+        // Add ${probability} to popup in case probability calculator comes up
+
+        marker.bindPopup(`${countyName},${numEvents},${rate}` ).on("click", closePopup)
 
       
     }
