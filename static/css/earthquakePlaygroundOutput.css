@@ -1,0 +1,30 @@
+.banner{
+    background: url('../styleElements/circles5.svg') white;
+    /* height: 100%;
+    width: 180%; */
+    background-size: 200%;
+    background-repeat: no-repeat;
+    font-family: 'Bebas Neue', cursive;
+  }
+
+  .nav-stuff{
+    background-color: #B1F1EE;
+  }
+
+ 
+  .ml-box{
+    height: 800px;
+    background-color: #B8E8FF;
+    
+  }
+  
+  #waveform{
+    font-size: 100px;
+    font-family: 'El Messiri', sans-serif;
+  }
+
+  body{
+    background-color: #daf5d1;
+  }
+
+  
