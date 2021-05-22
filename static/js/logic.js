@@ -14,7 +14,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   accessToken: API_KEY
 }).addTo(myMap);
 
-d3.csv("Seismic_Data.csv").then(function(eqdata){
+d3.csv("../data/project_2_data/Seismic_Data.csv").then(function(eqdata){
   // Create a new marker cluster group
   var markers = L.markerClusterGroup();
 

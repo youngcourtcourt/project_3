@@ -148,7 +148,7 @@ li:hover{
 }
 
 .banner{
-  background: url('../static/styleElements/circles4.svg') white;
+  background: url('../styleElements/circles4.svg') white;
   /* height: 100%;
   width: 180%; */
   background-size: 200%;

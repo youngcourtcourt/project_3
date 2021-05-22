@@ -1,4 +1,4 @@
-d3.csv("UNCERF.csv").then(function(data){
+d3.csv("../../data/project_2_data/UNCERF.csv").then(function(data){
     var countries=[]
     var dollars=[]
     for (var i=0;i<data.length;i++){
@@ -58,7 +58,7 @@ var myChart = new Chart(ctx1, {
     }
 })})
 
-d3.csv("Seismic_Data.csv").then(function(data){
+d3.csv("../data/project_2_data/Seismic_Data.csv").then(function(data){
     var waveForm=["ML","MD", "MD", "MMW", "MB_LG", "Other"]
     var mLCount=0
     var mdCount=0
@@ -84,7 +84,6 @@ d3.csv("Seismic_Data.csv").then(function(data){
         
         
 }counts.push(mLCount, mdCount, mbCount, mmwCount, mbLgCount, otherCount)
-console.log(counts)
 
 var ctx2 = document.getElementById('myPieChart');
 
