@@ -16,6 +16,11 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 var countyList=[]
 
 function onClick(e){
+  d3.select("#test")
+  .selectAll("h1")
+  .text(`${this._popup._content}`)
+  
+  
   console.log(this._popup._content)
 }
 
