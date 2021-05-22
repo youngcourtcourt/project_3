@@ -134,4 +134,13 @@ h3 {
     z-index: 1;
   }
 
+  .marker-icon{
+    z-index: 1;
+  width: 40%;
+  height: auto;
+  background-color: none;
+  display: block;
+  text-align: center;
+  margin: auto;
+  }
  
