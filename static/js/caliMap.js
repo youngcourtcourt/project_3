@@ -4,18 +4,20 @@ var myMap = L.map("map", {
   zoom: 6
 });
 
+// Create tile later
 L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
   attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
   tileSize: 512,
-  maxZoom: 18,
+  maxZoom: 8,
   zoomOffset: -1,
   id: "mapbox/streets-v11",
   accessToken: API_KEY
 }).addTo(myMap);
 
+// Initialize a county list in case we need one
 var countyList=[]
 
-function onClick(e){
+function onClick(event){
 
   var split1=(this._popup._content).split('County: ')[1]
   var split2=split1.split(' Total Events:')[1]
@@ -29,17 +31,23 @@ function onClick(e){
   console.log(split2)
 }
 
+function closePopup(event){
+  myMap.closePopup()
+}
+
 d3.csv("../data/aggregateCountyData.csv").then(function(data){
     
-    // console.log(data)
 
     for (var i=0;i<data.length;i++){
 
+      // Set key metrics to variables
         numEvents=Math.round(data[i]['Total Damaging Events'])
         latitude=data[i]['Latitude']
         longitude=data[i]['Longitude']
         countyName=(data[i]['County Name']).replaceAll('_', ' ')
         countyList.push(countyName)
+
+        // Attach palm tree to every marker
 
         var marker= new L.Marker([latitude, longitude], {
           icon: new L.DivIcon({
@@ -48,25 +56,17 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
                       })
         }).on("click", onClick)
 
+      // Add to map
+
         marker.addTo(myMap)
 
-        marker.bindPopup(`County: ${countyName} Total Events: ${numEvents}` )
+        // Bind popup to each marker
 
-        // marker.on("click", function(){
-        //   d3.select("#test")
-        //     .selectAll("h1")
-        //     .text(`${marker._latlng}`)
-            
-        //   console.log(marker._latlng)
-        // })
+        marker.bindPopup(`County: ${countyName} Total Events: ${numEvents}` ).on("click", closePopup)
+
+      
     }
 
 
 })
 
-// new L.Marker([37.4946, -120.8460], {
-//   icon: new L.DivIcon({
-//       className: 'my-div-icon',
-//       html: '<img class="palmTree" src="../static/styleElements/palmTree.svg"/>'
-//   })
-// }).addTo(myMap)
