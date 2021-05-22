@@ -27,8 +27,13 @@ function onClick(event){
 
   d3.select("#numEvents")
   .text(`${numEvents}`)
+
+  var lat=this._latlng.lat
+  var lng=this._latlng.lng
   
-  // console.log(split2)
+  center=[lat, lng]
+  
+  myMap.setView(center, 7)
 }
 
 function closePopup(event){
