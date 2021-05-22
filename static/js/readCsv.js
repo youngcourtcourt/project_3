@@ -13,17 +13,25 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   accessToken: API_KEY
 }).addTo(myMap);
 
-// d3.csv("../data/aggregateCountyData.csv").then(function(data){
+d3.csv("../data/aggregateCountyData.csv").then(function(data){
     
-//     console.log(data)
+    console.log(data)
 
-//     for (var i=0;i<data.length;i++){
+    for (var i=0;i<data.length;i++){
 
-//         numEvents=Math.round(data[i]['Total Damaging Events'])
-//         latitude=data[i]['Latitude']
-//         longitude=data[i]['Longitude']
-//         countyName=(data[i]['County Name']).replaceAll('_', ' ')
-//     }
+        numEvents=Math.round(data[i]['Total Damaging Events'])
+        latitude=data[i]['Latitude']
+        longitude=data[i]['Longitude']
+        countyName=(data[i]['County Name']).replaceAll('_', ' ')
+    }
 
 
-// })
+})
+
+new L.Marker([37.4946, -120.8460], {
+  icon: new L.DivIcon({
+      className: 'my-div-icon',
+      html: '<img class="my-div-image" src="../static/styleElements/palmTree.svg"/>'+
+            '<span class="my-div-span">RAF Banff Airfield</span>'
+  })
+}).addTo(myMap)
