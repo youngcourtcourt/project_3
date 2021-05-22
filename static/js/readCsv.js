@@ -34,6 +34,12 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
         marker.addTo(myMap)
 
         marker.bindPopup(`${countyName}`)
+
+        marker.on("click", function(){
+          d3.select("#test")
+            .selectAll("h1")
+            .text("HI")
+        })
     }
 
 
