@@ -19,16 +19,16 @@ var countyList=[]
 
 function onClick(event){
 
-  var split1=(this._popup._content).split('County: ')[1]
-  var split2=split1.split(' Total Events:')[1]
-  var county=split1.split(' Total')[0]
+  var county=(this._popup._content).split(',')[0]
+  var numEvents=(this._popup._content).split(',')[1]
+
   d3.select("#county")
   .text(`${county}`)
 
   d3.select("#numEvents")
-  .text(`${split2}`)
+  .text(`${numEvents}`)
   
-  console.log(split2)
+  // console.log(split2)
 }
 
 function closePopup(event){
@@ -62,7 +62,7 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
 
         // Bind popup to each marker
 
-        marker.bindPopup(`County: ${countyName} Total Events: ${numEvents}` ).on("click", closePopup)
+        marker.bindPopup(`${countyName},${numEvents}` ).on("click", closePopup)
 
       
     }
