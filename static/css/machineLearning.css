@@ -13,7 +13,8 @@
 
  
   .ml-box{
-    height: 800px;
+    height: 100%;
+    width: auto;
     background-color: #B8E8FF;
     
   }
@@ -25,4 +26,17 @@
 
   .center{
     text-align: center;
+  }
+
+  .header-box{
+    height: 70px;
+    width: auto;
+    background-color: #fffeb8;
+    box-shadow: -5px 5px teal;
+  }
+
+  .header{
+    font-family: 'Spartan', sans-serif;
+    font-size: 35px;
+    padding: 15px;
   }
