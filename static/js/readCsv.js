@@ -24,12 +24,16 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
         longitude=data[i]['Longitude']
         countyName=(data[i]['County Name']).replaceAll('_', ' ')
 
-        new L.Marker([latitude, longitude], {
+        var marker= new L.Marker([latitude, longitude], {
           icon: new L.DivIcon({
               className: 'my-div-icon',
               html: '<img class="palmTree" src="../static/styleElements/palmTree.svg"/>'
           })
-        }).addTo(myMap)
+        })
+
+        marker.addTo(myMap)
+
+        marker.bindPopup(`${countyName}`)
     }
 
 
