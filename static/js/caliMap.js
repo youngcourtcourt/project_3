@@ -38,7 +38,7 @@ function onClick(event){
   .text(`${numEvents}`)
 
   d3.select("#rate")
-  .text(`${rate}%`)
+  .text(`${rate}`)
 
   var lat=this._latlng.lat
   var lng=this._latlng.lng
