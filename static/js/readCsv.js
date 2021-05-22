@@ -31,7 +31,6 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
 new L.Marker([37.4946, -120.8460], {
   icon: new L.DivIcon({
       className: 'my-div-icon',
-      html: '<img class="my-div-image" src="../static/styleElements/palmTree.svg"/>'+
-            '<span class="my-div-span">RAF Banff Airfield</span>'
+      html: '<img class="palmTree" src="../static/styleElements/palmTree.svg"/>'
   })
 }).addTo(myMap)
