@@ -18,11 +18,15 @@ var countyList=[]
 function onClick(e){
 
   var split1=(this._popup._content).split('County: ')[1]
+  var split2=split1.split(' Total Events:')[1]
   var county=split1.split(' Total')[0]
   d3.select("#county")
   .text(`${county}`)
+
+  d3.select("#numEvents")
+  .text(`${split2}`)
   
-  
+  console.log(split2)
 }
 
 d3.csv("../data/aggregateCountyData.csv").then(function(data){
