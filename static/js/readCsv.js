@@ -16,7 +16,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 var countyList=[]
 
 function onClick(e){
-  console.log(this._latlng)
+  console.log(this._popup._content)
 }
 
 d3.csv("../data/aggregateCountyData.csv").then(function(data){
@@ -35,7 +35,7 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
           icon: new L.DivIcon({
               className: 'my-div-icon',
               html: '<img class="palmTree" src="../static/styleElements/palmTree.svg"/>'
-          })
+                      })
         }).on("click", onClick)
 
         marker.addTo(myMap)
