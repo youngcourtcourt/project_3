@@ -1,7 +1,7 @@
 // Create a map object
 var myMap = L.map("map", {
   center: [37.4946, -120.8460],
-  zoom: 7
+  zoom: 6
 });
 
 L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -16,12 +16,13 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 var countyList=[]
 
 function onClick(e){
-  d3.select("#test")
-  .selectAll("h1")
-  .text(`${this._popup._content}`)
+
+  var split1=(this._popup._content).split('County: ')[1]
+  var county=split1.split(' Total')[0]
+  d3.select("#county")
+  .text(`${county}`)
   
   
-  console.log(this._popup._content)
 }
 
 d3.csv("../data/aggregateCountyData.csv").then(function(data){
@@ -45,7 +46,7 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
 
         marker.addTo(myMap)
 
-        marker.bindPopup(`${countyName}` )
+        marker.bindPopup(`County: ${countyName} Total Events: ${numEvents}` )
 
         // marker.on("click", function(){
         //   d3.select("#test")
