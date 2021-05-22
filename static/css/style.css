@@ -74,10 +74,10 @@ h3 {
 }
 
   .banner{
-    background: url('../styleElements/circles.svg') white;
+    background: url('../styleElements/circles1.svg') white;
     /* height: 100%;
     width: 180%; */
-    background-size: 270%;
+    background-size: 200%;
     background-repeat: no-repeat;
     font-family: 'Bebas Neue', cursive;
   }
