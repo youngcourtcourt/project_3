@@ -114,4 +114,24 @@ h3 {
    .palmTree{
        height: 50px;
    }
-  
+
+  .img-overlay-wrap{
+    position: absolute;
+  }
+
+  .earth { /* <= optional, for responsiveness */
+    display: block;
+    max-width: 100%;
+    height: auto;
+    z-index: -7;
+    position: static;
+ }
+
+  .mLCircle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+ 
