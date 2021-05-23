@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Output!</title>
+  <title>Play With Quakes!</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- Fonts -->
@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../static/css/earthquakePlaygroundOutput.css">
+  <link rel="stylesheet" href="../static/css/earthquakePlayground.css">
 </head>
 
 <body>
@@ -26,16 +26,16 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="vizDashboard.html">Locate a Quake!</a>
+            <a class="nav-link" href="dashboard">Locate a Quake!</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="earthquakePlayground.html">Earthquake Playground</a>
+            <a class="nav-link" href="playground">Earthquake Playground</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="machineLearning.html">Machine Learning</a>
+            <a class="nav-link" href="machinelearning">Machine Learning</a>
           </li>
         </ul>
       </div>
@@ -53,14 +53,19 @@
         <br>
         <br>
         <br>
-      
-        <input class="form-control form-control-lg" type="text" placeholder="Magnitude">
+        <!-- <form>
+          <div class="form-group">
+            <label for="formControlRange">Magnitude</label>
+            <input id="magnitude" type="range" min="0.0" max="10.0" step="0.1" class="form-control-range" id="formControlRange">
+          </div>
+        </form> -->
+        <input class="form-control form-control-lg" min="0.0" max="10.0" step="0.1" type="number" placeholder="Magnitude">
         <br>
-        <input class="form-control form-control-lg" type="text" placeholder="Depth">
+        <input class="form-control form-control-lg" min="0.0" max="645" step="15" type="number" placeholder="Depth">
       </div>
       <div class='col-md-4'>
         <!-- User Inputs -->
-        <input name="variable" class="form-control form-control-lg" type="text" placeholder="Distance to Epicenter">
+        <input name="variable" class="form-control form-control-lg" min="0" max="65" step="5" type="number"  placeholder="Distance to Epicenter">
         <!-- <input type="submit"> -->
         <br>
         <div class="img-overlay-wrap">
@@ -72,18 +77,18 @@
             <circle class="mlCircle" cx="200" cy="170" r="120" stroke="none" fill="#F7DC6F" />
 
             <!-- ###### MACHINE LEARNING OUTPUT FIELD ###### -->
-            
             <text id='waveform' x="200" y='170' text-anchor="middle" dy=".3em">ML</text>
           </svg>
         </div>
+        <button type="submit" class="btn btn-outline-danger">Submit</button>
       </div>
       <div class='col-md-4'>
         <br>
         <br>
         <br>
-        <input class="form-control form-control-lg" type="text" placeholder="Azimuthal Gap">
+        <input class="form-control form-control-lg" min="10" max="360" step="20" type="number" placeholder="Azimuthal Gap">
         <br>
-        <input class="form-control form-control-lg" type="text" placeholder="Root Mean Square">
+        <input class="form-control form-control-lg" min="0.00" max="13.90" step="0.10" type="number" placeholder="Root Mean Square">
 
       </div>
 
@@ -105,7 +110,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="../static/js/slider.js"></script>
+    <script type="text/javascript" src="../static/js/earthquakePlayground.js"></script>
 
 </body>
 
