@@ -25,6 +25,7 @@
 
   body{
     background-color: #D0F7F5;
+    /* background-image: url("../styleElements/playgroundBackground.svg"); */
     
   }
 
@@ -50,5 +51,6 @@
     padding-right:50%;
     height:500px;
     width: auto;
+    position: fixed;
     /* align-items: center; */
   }
