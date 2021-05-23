@@ -61,11 +61,11 @@
         </form> -->
         <input class="form-control form-control-lg" min="0.0" max="10.0" step="0.1" type="number" placeholder="Magnitude">
         <br>
-        <input class="form-control form-control-lg" type="text" placeholder="Depth">
+        <input class="form-control form-control-lg" min="0.0" max="645" step="15" type="number" placeholder="Depth">
       </div>
       <div class='col-md-4'>
         <!-- User Inputs -->
-        <input name="variable" class="form-control form-control-lg" type="text" placeholder="Distance to Epicenter">
+        <input name="variable" class="form-control form-control-lg" min="0" max="65" step="5" type="number"  placeholder="Distance to Epicenter">
         <!-- <input type="submit"> -->
         <br>
         <div class="img-overlay-wrap">
@@ -86,9 +86,9 @@
         <br>
         <br>
         <br>
-        <input class="form-control form-control-lg" type="text" placeholder="Azimuthal Gap">
+        <input class="form-control form-control-lg" min="10" max="360" step="20" type="number" placeholder="Azimuthal Gap">
         <br>
-        <input class="form-control form-control-lg" type="text" placeholder="Root Mean Square">
+        <input class="form-control form-control-lg" min="0.00" max="13.90" step="0.10" type="number" placeholder="Root Mean Square">
 
       </div>
 
