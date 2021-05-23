@@ -45,3 +45,10 @@
     border-radius: 6px;
     box-shadow:5px 5px #a8d3d1;
   }
+
+  .slide{
+    padding-right:50%;
+    height:500px;
+    width: auto;
+    /* align-items: center; */
+  }
