@@ -59,7 +59,7 @@
             <input id="magnitude" type="range" min="0.0" max="10.0" step="0.1" class="form-control-range" id="formControlRange">
           </div>
         </form> -->
-        <input class="form-control form-control-lg" type="text" placeholder="Magnitude">
+        <input class="form-control form-control-lg" min="0.0" max="10.0" step="0.1" type="number" placeholder="Magnitude">
         <br>
         <input class="form-control form-control-lg" type="text" placeholder="Depth">
       </div>
@@ -80,6 +80,7 @@
             <text id='waveform' x="200" y='170' text-anchor="middle" dy=".3em">ML</text>
           </svg>
         </div>
+        <button type="submit" class="btn btn-outline-danger">Submit</button>
       </div>
       <div class='col-md-4'>
         <br>
@@ -109,7 +110,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="../static/js/slider.js"></script>
+    <script type="text/javascript" src="../static/js/earthquakePlayground.js"></script>
 
 </body>
 

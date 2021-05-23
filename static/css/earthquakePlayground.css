@@ -26,3 +26,7 @@
   body{
     background-color: #daf5d1;
   }
+
+  input:invalid {
+    border: solid red 3px;
+  }
