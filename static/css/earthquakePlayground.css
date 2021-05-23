@@ -52,5 +52,9 @@
     height:500px;
     width: auto;
     position: fixed;
-    /* align-items: center; */
+    align: center;
+  }
+
+  .other{
+    background-color: teal;
   }
