@@ -33,7 +33,12 @@
   }
 
   .grass{
-    background-color: #3D8036;
+    background-color: #56af4c;
     width: 100%;
     height: 800px;
+  }
+
+  .info-box{
+    height: 100px;
+    background-color: #f5d349;
   }
