@@ -58,3 +58,12 @@
   .other{
     background-color: teal;
   }
+
+  .img-overlay-wrap{
+    background-image: url("../styleElements/earth.svg");
+    height: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-repeat: no-repeat;
+}
