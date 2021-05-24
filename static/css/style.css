@@ -48,18 +48,26 @@ h3 {
   box-shadow: 5px 5px #16a085;
 }
 
+.more-box{
+  background-color: #bbe9cf;
+  margin: 5%;
+  padding: 3%;
+  width: 100%;
+  font-family: 'Spartan', sans-serif;
+}
+
 .header-box{
   font-family: 'Spartan', sans-serif;
   font-size: 27px;
   text-align: center;
-  background-color: #bbe9cf;
+  background-color: #dee3f5;
   margin-left: 3%;
   margin-right: 3%;
   margin-bottom: 3%;
   padding: 3%;
   width: 740px;
   height: 80px;
-  box-shadow: 5px 5px #16a085;
+  box-shadow: 5px 5px #8FA1DC;
 }
 
 .nav-stuff{
