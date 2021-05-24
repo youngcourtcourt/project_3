@@ -53,7 +53,7 @@
   }
 
   .info-box{
-    height: 100px;
+    height: 110px;
     width: auto;
     background-color: #f5d349;
     padding: 1%;
@@ -85,16 +85,20 @@
     background-color: teal;
   }
 
+  .form-control{
+    margin-top: -5px;
+  }
+
   .img-overlay-wrap{
     background-image: url("../styleElements/earth.svg");
-    height: 60%;
+    height: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     background-repeat: no-repeat;
 }
 
-.submit-button{
+.play-button{
   background-color: rgb(247, 107, 83);
   height: 50px;
   width: 200px;
@@ -104,9 +108,16 @@
   box-shadow: 2px 2px #91b6b4;
   margin-left: 100px;
   border-color: #D0F7F5;
+  cursor: pointer;
 }
 
-.submit-button:hover{
-  background-color: rgb(245, 156, 140);
+.play-button:hover{
+  background-color: rgb(245, 174, 161);
 
+}
+
+p{
+  font-family: 'Spartan', sans-serif;
+  font-size: small;
+  padding: 1%;
 }
