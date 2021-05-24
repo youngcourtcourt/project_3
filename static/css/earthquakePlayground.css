@@ -45,10 +45,21 @@
 
   .info-box{
     height: 100px;
+    width: auto;
     background-color: #f5d349;
     padding: 1%;
     border-radius: 6px;
     box-shadow:5px 5px #a8d3d1;
+  }
+
+  .icon-box{
+    height: 100px;
+    width: 100px;
+    background-color: #f3e4aa;
+    padding: 1%;
+    border-radius: 6px;
+    box-shadow:5px 5px #a8d3d1;
+    margin-left: 20px;
   }
 
   .slide{
