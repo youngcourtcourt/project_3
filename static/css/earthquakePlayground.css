@@ -56,12 +56,14 @@
     height: 100px;
     width: 100px;
     background-color: #f3e4aa;
-    padding: 1%;
+    padding-left: 10%;
+    padding-top: 15%;
     border-radius: 6px;
     box-shadow:5px 5px #a8d3d1;
     margin-left: 20px;
   }
 
+ 
   .slide{
     padding-right:50%;
     height:500px;
@@ -81,4 +83,19 @@
     margin-left: auto;
     margin-right: auto;
     background-repeat: no-repeat;
+}
+
+.submit-button{
+  background-color: rgb(247, 107, 83);
+  height: 50px;
+  width: 200px;
+  font-family: 'Spartan', sans-serif;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 2px 2px teal;
+}
+
+.submit-button:hover{
+  background-color: rgb(245, 156, 140);
+
 }
