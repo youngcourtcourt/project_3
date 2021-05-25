@@ -52,17 +52,16 @@ function closePopup(event){
   myMap.closePopup()
 }
 
-d3.csv("../data/aggregateCountyData.csv").then(function(data){
-    
+d3.json("/api/v1.0/county_data").then(function(data){
 
     for (var i=0;i<data.length;i++){
 
       // Set key metrics to variables
-        var numEvents=Math.round(data[i]['Total Damaging Events'])
-        var latitude=data[i]['Latitude']
-        var longitude=data[i]['Longitude']
-        var rate=Math.round(data[i]['Rate of Damaging Events'])
-        var countyName=(data[i]['County Name']).replaceAll('_', ' ')
+        var numEvents=Math.round(data[i]['total_damaging_events'])
+        var latitude=data[i]['latitude']
+        var longitude=data[i]['longitude']
+        var rate=Math.round(data[i]['rate_of_damaging_events'])
+        var countyName=(data[i]['county']).replaceAll('_', ' ')
         countyList.push(countyName)
 
         // ######## Uncomment in case probability calculator boots up ########
@@ -91,6 +90,4 @@ d3.csv("../data/aggregateCountyData.csv").then(function(data){
       
     }
 
-
 })
-

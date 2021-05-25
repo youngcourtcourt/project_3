@@ -96,7 +96,7 @@ function updateToolTip(chosenXAxis, circlesGroup) {
 }
 
 // Retrieve data from the CSV file and execute everything below
-d3.csv("../../data/project_2_data/quakers2shakers.csv").then(function(quakers2shakers, err) {
+d3.json("/api/v2.0/quake_data").then(function(quakers2shakers, err) {
   if (err) throw err;
 
   // parse data

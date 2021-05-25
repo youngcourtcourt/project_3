@@ -1,9 +1,9 @@
-d3.csv("../../data/project_2_data/UNCERF.csv").then(function(data){
+d3.json("/api/v1.0/relief_data").then(function(data){
     var countries=[]
     var dollars=[]
     for (var i=0;i<data.length;i++){
-        var dollar=data[i]["Total Disaster Relief($)"]
-        dollar= parseInt(dollar.replace(/,/g, ""))
+        var dollar=data[i]["Total_relief"]
+        // dollar= parseInt(dollar.replace(/,/g, ""))
         countries.push(data[i].Country)
         dollars.push(dollar)
         
@@ -58,7 +58,7 @@ var myChart = new Chart(ctx1, {
     }
 })})
 
-d3.csv("../data/project_2_data/Seismic_Data.csv").then(function(data){
+d3.json("/api/v1.0/earthquake_data").then(function(data){
     var waveForm=["ML","MD", "MD", "MMW", "MB_LG", "Other"]
     var mLCount=0
     var mdCount=0

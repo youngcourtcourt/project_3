@@ -14,7 +14,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   accessToken: API_KEY
 }).addTo(myMap);
 
-d3.csv("../data/project_2_data/Seismic_Data.csv").then(function(eqdata){
+d3.json("/api/v1.0/earthquake_data").then(function(eqdata){
   // Create a new marker cluster group
   var markers = L.markerClusterGroup();
 
@@ -47,7 +47,7 @@ d3.csv("../data/project_2_data/Seismic_Data.csv").then(function(eqdata){
 
       // Add a new marker to the cluster group and bind a pop-up
       markers.addLayer((L.marker([latitude, longitude])
-        .bindPopup(`<h4>${place}</h4><hr><p>Depth: ${Math.round(depth*100)/100}ft WaveForm: ${waveForm.toUpperCase()}</p>`)
+        .bindPopup(`<h4>${place}</h4><hr><p>Depth: ${Math.round(depth*100)/100} ft<br>WaveForm: ${waveForm}</p>`)
         .on("click", function(){
         // d3.select("#magnitude").text(`${magnitude}`)
         // var depth2= (Math.round(depth*100)/100)
