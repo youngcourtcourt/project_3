@@ -13,9 +13,10 @@
 
  
   .ml-box{
-    height: 100%;
+    height: 20%;
     width: auto;
     background-color: #B8E8FF;
+    padding: 4%;
     
   }
   
@@ -33,10 +34,21 @@
     width: auto;
     background-color: #fffeb8;
     box-shadow: -5px 5px teal;
+    margin: 4%;
   }
 
   .header{
     font-family: 'Spartan', sans-serif;
-    font-size: 35px;
+    font-size: 30px;
     padding: 15px;
+  }
+
+  .caption-box{
+    height: 40px;
+    width: 400px;
+    background-color: #f3f5f4;
+    box-shadow: -5px 5px teal;
+    margin: 4%;
+    padding: 1%;
+    border-radius: 5px;
   }

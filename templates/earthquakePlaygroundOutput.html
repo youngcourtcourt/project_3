@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Output!</title>
+  <title>Play With Quakes!</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- Fonts -->
@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../static/css/earthquakePlaygroundOutput.css">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -26,16 +27,16 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="vizDashboard.html">Locate a Quake!</a>
+            <a class="nav-link" href="dashboard">Locate a Quake!</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="earthquakePlayground.html">Earthquake Playground</a>
+            <a class="nav-link" href="playground">Earthquake Playground</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="machineLearning.html">Machine Learning</a>
+            <a class="nav-link" href="machinelearning">Machine Learning</a>
           </li>
         </ul>
       </div>
@@ -53,41 +54,130 @@
         <br>
         <br>
         <br>
-      
-        <input class="form-control form-control-lg" type="text" placeholder="Magnitude">
-        <br>
-        <input class="form-control form-control-lg" type="text" placeholder="Depth">
-      </div>
-      <div class='col-md-4'>
-        <!-- User Inputs -->
-        <input name="variable" class="form-control form-control-lg" type="text" placeholder="Distance to Epicenter">
-        <!-- <input type="submit"> -->
-        <br>
-        <div class="img-overlay-wrap">
-          <!-- <img class="earth" src='../static/styleElements/earth.svg'> -->
-          <svg viewBox="0 0 400 400">
-            <!-- <circle cx="200" cy="170" r="160" stroke="none" fill="#FF7F50" />
-                <circle cx="200" cy="170" r="140" stroke="none" fill="#f8c471" /> -->
+        <!-- Input row -->
+        <div class="row">
+          <!-- Magnitude Icon -->
+          <div class="col-md-3">
+            <div class="icon-box">
+              <img height="60%" src="../static/styleElements/magnitude.svg">
 
-            <circle class="mlCircle" cx="200" cy="170" r="120" stroke="none" fill="#F7DC6F" />
+            </div>
+          </div>
+          <!-- MAGNITUDE INPUT -->
+          <div class="col-md-8">
+            <div class="info-box">
+              <p>A number that characterizes the relative size of an earthquake</p>
+              <input class="form-control form-control-md" min="0.0" max="10.0" step="0.1" type="number"
+            placeholder="Magnitude">
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <!-- Depth Icon -->
+          <div class="col-md-3">
+            <div class="icon-box">
+              <img height="60%" src="../static/styleElements/depth.svg">
+            </div>
+          </div>
+          <!-- DEPTH INPUT -->
+          <div class="col-md-8">
+            <div class="info-box">
+              <p>In seismology, the depth refers to the depth at which an earthquake occurs.</p>
 
-            <!-- ###### MACHINE LEARNING OUTPUT FIELD ###### -->
-            
-            <text id='waveform' x="200" y='170' text-anchor="middle" dy=".3em">ML</text>
-          </svg>
+              <input class="form-control form-control-md" min="0.0" max="645" step="15" type="number" placeholder="Depth">
+            </div>
+          </div>
         </div>
       </div>
       <div class='col-md-4'>
+        <div class="row">
+          <!-- Distance to Epicenter Icon -->
+          <div class="col-md-3">
+            <div class="icon-box">
+              <img height="60%" src="../static/styleElements/distance.svg">
+            </div>
+          </div>
+          <!-- DISTANCE TO EPICENTER INPUT -->
+          <div class="col-md-8">
+            <div class="info-box">
+              <p>The distance of the seismic recording station from the earthquake</p>
+              <input name="variable" class="form-control form-control-md" min="0" max="65" step="5" type="number"
+            placeholder="Distance to Epicenter">
+            </div>
+          </div>
+        </div>
         <br>
         <br>
         <br>
-        <input class="form-control form-control-lg" type="text" placeholder="Azimuthal Gap">
+        <svg class="img-overlay-wrap" viewBox="0 0 400 400">
+
+
+          <circle class="mlCircle" cx="200" cy="200" r="150" stroke="none" fill="#F7DC6F" />
+
+          <!-- ###### MACHINE LEARNING OUTPUT FIELD ###### -->
+
+          <text id='waveform' x="200" y='200' text-anchor="middle" dy=".3em">ML</text>
+        </svg>
+      </div>
+      <div class='col-md-4'>
         <br>
-        <input class="form-control form-control-lg" type="text" placeholder="Root Mean Square">
+        <br>
+        <br>
+        <div class="row">
+          <!-- Azimuthal Gap Icon -->
+          <div class="col-md-3">
+            <div class="icon-box">
+              <img height="60%" src="../static/styleElements/azimuthalGap.svg">
+            </div>
+          </div>
+          <!-- AZIMUTHAL GAP INPUT -->
+          <div class="col-md-8">
+            <div class="info-box">
+              <p>The angular measurement between the earthquake and a celestial body.</p>
+  
+              <input class="form-control form-control-md" min="10" max="360" step="20" type="number"
+            placeholder="Azimuthal Gap">
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <!-- Root Square Icon -->
+          <div class="col-md-3">
+            <div class="icon-box">
+              <img height="60%" src="../static/styleElements/rootMeanSquare.svg">
+            </div>
+          </div>
+          <!-- Root Mean Square Input -->
+          <div class="col-md-8">
+            <div class="info-box">
+              <p>The root mean square is defined as the square root of the mean square.</p>
+              <input class="form-control form-control-md" min="0.00" max="13.90" step="0.10" type="number"
+            placeholder="Root Mean Square">
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button type="submit" class="play-button">Let's Play!</button>
+
 
       </div>
 
+
     </div>
+    <!-- <div class="row"> -->
+    <div class="playground"></div>
+
+    <div class="grass">
+
+    </div>
+    <!-- </div> -->
 
 
   </div>
@@ -105,7 +195,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="../static/js/slider.js"></script>
+  <script type="text/javascript" src="../static/js/earthquakePlayground.js"></script>
 
 </body>
 
