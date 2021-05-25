@@ -59,7 +59,7 @@ var myChart = new Chart(ctx1, {
 })})
 
 d3.json("/api/v1.0/earthquake_data").then(function(data){
-    var waveForm=["ML","MD", "MD", "MMW", "MB_LG", "Other"]
+    var waveForm=["ML","MD", "MB", "MMW", "MB_LG", "Other"]
     var mLCount=0
     var mdCount=0
     var mbCount=0
@@ -68,15 +68,15 @@ d3.json("/api/v1.0/earthquake_data").then(function(data){
     var otherCount=0
     var counts=[]
     for (var i=0;i<data.length;i++){
-        if(data[i].Waveform==="ml"){
+        if(data[i].Waveform==="ML"){
             mLCount+=1
-        }else if(data[i].Waveform==="md"){
+        }else if(data[i].Waveform==="MD"){
             mdCount+=1
-        }else if(data[i].Waveform==="mb"){
+        }else if(data[i].Waveform==="MB"){
             mbCount+=1
-        }else if(data[i].Waveform==="mmw"){
+        }else if(data[i].Waveform==="MMW"){
             mmwCount+=1
-        }else if(data[i].Waveform==="mb_lg"){
+        }else if(data[i].Waveform==="MB_LG"){
             mbLgCount+=1
         }else{
             otherCount+=1
@@ -117,5 +117,4 @@ var myChart2 = new Chart(ctx2, {
 
 
 })
-
 
