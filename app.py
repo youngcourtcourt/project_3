@@ -21,6 +21,12 @@ import json
 #Import CSV
 import csv
 
+# Import pickle
+import pickle
+
+# Import numpy
+import numpy as np
+
 #################################################
 # Database Setup
 #################################################
@@ -89,15 +95,18 @@ class county_data(Base):
 #################################################
 app = Flask(__name__)
 
+# pickled model
+model = pickle.load(open('pickle_model.pkl', 'rb'))
+
 #################################################
 # Flask Routes
 #################################################
 @app.route("/")
-def open():
+def home1():
     return render_template("index.html")
 
 @app.route("/home")
-def home():
+def home2():
     return render_template("index.html")
 
 @app.route("/dashboard")
@@ -107,6 +116,43 @@ def dashboard():
 @app.route("/playground")
 def playground():
     return render_template("earthquakePlayground.html")
+
+@app.route("/predict", methods=['GET', 'POST'])
+def predict():
+    
+    input_list = []
+
+    if request.method == 'POST':
+
+        magnitude = request.form.get('magnitude')
+        print(magnitude)
+        input_list.append(magnitude)
+
+        depth = request.form.get('depth')
+        print(depth)
+        input_list.append(depth)
+
+        distance = request.form.get('distance')
+        print(distance)
+        input_list.append(distance)
+
+        azimuthal = request.form.get('azimuthal')
+        print(azimuthal)
+        input_list.append(azimuthal)
+
+        root_mean = request.form.get('root_mean')
+        print(root_mean)
+        input_list.append(root_mean)
+
+        print(input_list)
+
+        input_array = [np.array(input_list)]
+
+        print(input_array)
+
+        prediction = model.predict(input_array)[0].upper()
+
+    return render_template("earthquakePlayground.html", test_prediction = prediction) 
 
 @app.route("/machinelearning")
 def machinelearning():

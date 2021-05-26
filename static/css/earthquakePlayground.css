@@ -37,7 +37,7 @@
     background-image: url(../styleElements/slide3.svg);
     background-repeat: no-repeat;
     height: 500px;
-    margin-top: -300px;
+    /* margin-top: -300px; */
     margin-left: 20px;
     margin-bottom: -200px;
     position: sticky;
