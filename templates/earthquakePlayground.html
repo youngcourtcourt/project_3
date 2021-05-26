@@ -52,29 +52,11 @@
   <div class="containter">
     <div class="row">
       <div class='col-md-4'>
-        <br>
-        <br>
-        <br>
-        <svg class="img-overlay-wrap" viewBox="0 0 400 400">
-
-
-          <circle class="mlCircle" cx="200" cy="200" r="150" stroke="none" fill="#F7DC6F" />
-
-          <!-- ###### MACHINE LEARNING OUTPUT FIELD ###### -->
-
-          <text id='waveform' x="200" y='200' text-anchor="middle" dy=".3em">{{ test_prediction }}</text>
-        </svg>
-      </div>
-
-      <div class='col-md-4'>
         <!-- Input row -->
         <div class="row">
           <!-- Magnitude Icon -->
           <div class="col-md-3">
-            <div class="magnitude icon-box">
-              <!-- <img height="60%" src="../static/styleElements/magnitude.svg"> -->
-
-            </div>
+            <div class="magnitude icon-box"></div>
           </div>
           <!-- MAGNITUDE INPUT -->
           <div class="col-md-8">
@@ -92,9 +74,7 @@
         <div class="row">
           <!-- Depth Icon -->
           <div class="col-md-3">
-            <div class="depth icon-box">
-              <!-- <img height="60%" src="../static/styleElements/depth.svg"> -->
-            </div>
+            <div class="depth icon-box"></div>
           </div>
           <!-- DEPTH INPUT -->
           <div class="col-md-8">
@@ -111,9 +91,7 @@
         <div class="row">
           <!-- Distance to Epicenter Icon -->
           <div class="col-md-3">
-            <div class="distance icon-box">
-              <!-- <img height="60%" src="../static/styleElements/distance.svg"> -->
-            </div>
+            <div class="distance icon-box"></div>
           </div>
           <!-- DISTANCE TO EPICENTER INPUT -->
           <div class="col-md-8">
@@ -131,9 +109,7 @@
         <div class="row">
           <!-- Azimuthal Gap Icon -->
           <div class="col-md-3">
-            <div class="azimuthal icon-box">
-              <!-- <img height="60%" src="../static/styleElements/azimuthalGap.svg"> -->
-            </div>
+            <div class="azimuthal icon-box"></div>
           </div>
           <!-- AZIMUTHAL GAP INPUT -->
           <div class="col-md-8">
@@ -151,9 +127,7 @@
         <div class="row">
           <!-- Root Square Icon -->
           <div class="col-md-3">
-            <div class="rms icon-box">
-              <!-- <img height="60%" src="../static/styleElements/rootMeanSquare.svg"> -->
-            </div>
+            <div class="rms icon-box"></div>
           </div>
           <!-- Root Mean Square Input -->
           <div class="col-md-8">
@@ -171,7 +145,21 @@
 
 
       </div>
+      
+      <div class='col-md-8'>
+        <br>
+        <br>
+        <br>
+        <svg class="img-overlay-wrap" viewBox="0 0 400 400">
 
+
+          <circle class="mlCircle" cx="200" cy="200" r="150" stroke="none" fill="#F7DC6F" />
+
+          <!-- ###### MACHINE LEARNING OUTPUT FIELD ###### -->
+
+          <text id='waveform' x="200" y='200' text-anchor="middle" dy=".3em">{{ test_prediction }}</text>
+        </svg>
+      </div>
 
     </div>
     <!-- <div class="row"> -->
