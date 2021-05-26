@@ -189,3 +189,13 @@ h3 {
   font-family: 'Spartan', sans-serif;
   font-size: 30px;
 }
+
+.bar {
+  fill:#16a085;
+  width: 35px;
+
+}
+
+.bar:hover {
+  fill: #B1F1EE;
+}

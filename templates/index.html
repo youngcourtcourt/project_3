@@ -46,6 +46,11 @@
           <li class="nav-item">
             <a class="nav-link" href="machinelearning">Machine Learning</a>
           </li>
+
+          <!-- For Ryan's Tableau Viz -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Tableau Visualizations</a>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -76,7 +81,8 @@
             <h3>What's A Damaging Event?</h3>
           </div>
           <div class="box">
-            <p>INSERT EXPLANATION OF A DAMAGING EVENT</p>
+            <p>The USGS regards earthquakes at and above 5.0 as damaging earthquakes. 
+              For our purposes we will adopt the same guidelines.</p>
           </div>
         </div>
 
@@ -128,13 +134,15 @@
 
     </div>
     <!-- ##### UNCOMMENT FOR RYAN'S CHARTS ##### -->
-    <!-- <div class="row">
+    <div class="row">
       <div class="more-box">
         <h2>But Wait! There's More...</h2>
+        <div id="barChart"></div>
+
         <br>
         <br>
       </div>
-    </div> -->
+    </div>
 
     <!-- Scripts -->
 
@@ -159,6 +167,7 @@ crossorigin=""></script>
 <!-- Our scripts -->
 <!-- <script type="text/javascript" src="../static/js/config.js"></script> -->
 <!-- <script type="text/javascript" src="../static/js/caliMap.js"></script> -->
+<script src="../static/js/damageBarChart.js"></script>
 <script type="text/javascript" src="{{ url_for('static',filename='js/config.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static',filename='js/caliMap.js') }}"></script>
 
