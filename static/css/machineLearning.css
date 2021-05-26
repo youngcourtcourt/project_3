@@ -13,7 +13,7 @@
 
  
   .ml-box{
-    height: 20%;
+    height: 35%;
     width: auto;
     background-color: #B8E8FF;
     padding: 4%;
@@ -39,8 +39,8 @@
 
   .header{
     font-family: 'Spartan', sans-serif;
-    font-size: 30px;
-    padding: 15px;
+    font-size: 25px;
+    padding: 10px;
   }
 
   .caption-box{
