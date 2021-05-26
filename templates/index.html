@@ -46,6 +46,11 @@
           <li class="nav-item">
             <a class="nav-link" href="machinelearning">Machine Learning</a>
           </li>
+
+          <!-- For Ryan's Tableau Viz -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Tableau Visualizations</a>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -75,8 +80,9 @@
           <div class="header-box">
             <h3>What's A Damaging Event?</h3>
           </div>
-          <div class="box">
-            <p>INSERT EXPLANATION OF A DAMAGING EVENT</p>
+          <div class="yellow-box">
+            <p>The USGS regards earthquakes at and above 5.0 as damaging earthquakes. 
+              For our purposes we will adopt the same guidelines.</p>
           </div>
         </div>
 
@@ -128,13 +134,18 @@
 
     </div>
     <!-- ##### UNCOMMENT FOR RYAN'S CHARTS ##### -->
-    <!-- <div class="row">
+    <div class="row">
       <div class="more-box">
-        <h2>But Wait! There's More...</h2>
+        <h2>See How Your County Stacks Up..</h2>
+        <br>
+        <p class="center">Earthquake Damage By Counties Most Affected: Top 10</p>
+        <div class="barChartBox">
+          <div id="barChart"></div>
+        </div>
         <br>
         <br>
       </div>
-    </div> -->
+    </div>
 
     <!-- Scripts -->
 
@@ -157,8 +168,9 @@
 integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
 crossorigin=""></script>
 <!-- Our scripts -->
-<!-- <script type="text/javascript" src="../static/js/config.js"></script>
-<script type="text/javascript" src="../static/js/caliMap.js"></script> -->
+<!-- <script type="text/javascript" src="../static/js/config.js"></script> -->
+<!-- <script type="text/javascript" src="../static/js/caliMap.js"></script> -->
+<script src="../static/js/damageBarChart.js"></script>
 <script type="text/javascript" src="{{ url_for('static',filename='js/config.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static',filename='js/caliMap.js') }}"></script>
 

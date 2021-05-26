@@ -1,15 +1,14 @@
 // Bubble Chart for US Aid, Earthquake Magnitude, and Population
 
-var svgWidth = 600;
-var svgHeight = 400;
+var svgWidth = 1300;
+var svgHeight = 700;
 
 var margin = {
-  top: 40,
+  top: 60,
   right: 40,
   bottom: 80,
-  left: 100
+  left: 140
 };
-
 
 var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
@@ -36,7 +35,7 @@ function xScale(quakers2shakers, chosenXAxis) {
     .domain([d3.min(quakers2shakers, d => d[chosenXAxis]) * 0.8,
       d3.max(quakers2shakers, d => d[chosenXAxis]) * 1.2
     ])
-    .range([0, width]);
+    .range([10, width]);
 
   return xLinearScale;
 
@@ -73,7 +72,7 @@ function updateToolTip(chosenXAxis, circlesGroup) {
     label = "Magnitude:";
   }
   else {
-    label = "Population"
+    label = "Total # Earthquakes 2020:";
   }
 
   var toolTip = d3.tip()
@@ -97,14 +96,14 @@ function updateToolTip(chosenXAxis, circlesGroup) {
 }
 
 // Retrieve data from the CSV file and execute everything below
-d3.json("/api/v2.0/quake_data").then(function(quakers2shakers, err) {
+d3.csv("quakers2shakers.csv").then(function(quakers2shakers, err) {
   if (err) throw err;
 
   // parse data
   quakers2shakers.forEach(function(data) {
     data.magnitude = +data.magnitude;
-    data.aid_usd_mil = +data.aid_us_mil;
-    data.pop_mil = +data.pop_mil;
+    data.aid_usd_mil = +data.aid_usd_mil;
+    data.total_EQs_past_365days = +data.total_EQs_past_365days;
   });
 
   // xLinearScale function above csv import
@@ -112,7 +111,7 @@ d3.json("/api/v2.0/quake_data").then(function(quakers2shakers, err) {
 
   // Create y scale function
   var yLinearScale = d3.scaleLinear()
-    .domain([0, d3.max(quakers2shakers, d => d.aid_us_mil)])
+    .domain([0, d3.max(quakers2shakers, d => d.aid_usd_mil)])
     .range([height, 0])
 
   // Create initial axis functions
@@ -135,10 +134,10 @@ d3.json("/api/v2.0/quake_data").then(function(quakers2shakers, err) {
     .enter()
     .append("circle")
     .attr("cx", d => xLinearScale(d[chosenXAxis]))
-    .attr("cy", d => yLinearScale(d.aid_us_mil))
-    .attr("r", 15)
-    .attr("fill", "red")
-    .attr("opacity", ".5");
+    .attr("cy", d => yLinearScale(d.aid_usd_mil))
+    .attr("r", 25)
+    .attr("fill", "green")
+    .attr("opacity", ".7");
 
   // Create group for two x-axis labels
   var labelsGroup = chartGroup.append("g")
@@ -151,12 +150,12 @@ d3.json("/api/v2.0/quake_data").then(function(quakers2shakers, err) {
     .classed("active", true)
     .text("Highest Recorded Magnitude");
 
-  var populationLabel = labelsGroup.append("text")
+  var earthquakesLabel = labelsGroup.append("text")
     .attr("x", 0)
     .attr("y", 50)
-    .attr("value", "pop_mil") // value to grab for event listener
+    .attr("value", "total_EQs_past_365days") // value to grab for event listener
     .classed("inactive", true)
-    .text("Population (in millions)");
+    .text("Total # Earthquakes Past 365 Days (3+ magnitude min.)");
 
   // append y axis
   chartGroup.append("text")
@@ -196,8 +195,8 @@ d3.json("/api/v2.0/quake_data").then(function(quakers2shakers, err) {
         circlesGroup = updateToolTip(chosenXAxis, circlesGroup);
 
         // changes classes to change bold text
-        if (chosenXAxis === "pop_mil") {
-          populationLabel
+        if (chosenXAxis === "total_EQs_past_365days") {
+          earthquakesLabel
             .classed("active", true)
             .classed("inactive", false);
           magnitudeLabel
@@ -205,7 +204,7 @@ d3.json("/api/v2.0/quake_data").then(function(quakers2shakers, err) {
             .classed("inactive", true);
         }
         else {
-          populationLabel
+          earthquakesLabel
             .classed("active", false)
             .classed("inactive", true);
           magnitudeLabel

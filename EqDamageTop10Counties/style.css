@@ -8,11 +8,11 @@ body {
 
 
 .bar {
-  fill: rgb(0, 169, 220);
+  fill:#16a085;
   width: 35px;
 
 }
 
 .bar:hover {
-  fill: rgb(238, 11, 170);
+  fill: #B1F1EE;
 }

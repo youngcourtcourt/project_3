@@ -4,20 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <title>Machine Learning</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
-    <!-- Our CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+  <!-- Our CSS -->
   <link rel="stylesheet" href="../static/css/machineLearning.css">
 </head>
+
 <body>
 
   <!-- Nav Bar -->
   <nav class="navbar navbar-expand-lg navbar-light nav-stuff">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -48,47 +51,72 @@
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-5">
-        
-          <img class="center" width= 80% src="../static/visualizations/Correct_vs_Incorrect_Over_Depth_and_Magnitude.png">
-          
-         <br>
-         <br>
-          
 
-          <img width= 80% src="../static/visualizations/Percentage_of_Total_Waveform_Pie_Chart.png">
+        <img class="center" width=80% src="../static/visualizations/Correct_vs_Incorrect_Over_Depth_and_Magnitude.png">
 
-          
+        <br>
+        <br>
+
+
+        <img width=80% src="../static/visualizations/Percentage_of_Total_Waveform_Pie_Chart.png">
+
+
       </div>
       <div class="col-md-5">
-        <div class="header-box">
-        <h1 class="center header">What's it all about, anyway?</h1>
-      </div>
-      <br>
-        <div class="ml-box">
-          <br>
-          <p class="center">Using the depth, magnitude, Sensor's Distance to Epicenter, Azimuthal gap, and Root mean Square, 
-            a Support Vector Machine will predict the predominant seismic waveform of the earthquake event</p>
-        </div>
-        <div class="header-box">
-          <h1 class="center header">And what do those charts mean?</h1>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="header-box">
+              <h1 class="center header">What's it all about, anyway?</h1>
+            </div>
+          </div>
         </div>
         <br>
+        <div class="row">
+          <div class="ml-box">
+            <p class="center">Using the depth, magnitude, Sensor's Distance to Epicenter, Azimuthal gap,
+              and Root mean Square, a Support Vector Classifier(SVC) will predict the predominant seismic
+              waveform of the earthquake event. SVC is a type of Support Vector Machine(SVM). SVM can be
+              used for Classification and regression problems, although it is mainly used for Classification. A short
+              summary of how SVM works is as follows: the number of features in the data is the number n, a graph of
+              each row of data is then made in n-dimensional space. Classification is then performed in a hyperplane(n-1
+              dimensional plane) to determine the different classes.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="header-box">
+
+              <h1 class="center header">And what do those charts mean?</h1>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
           <div class="ml-box">
             <p class="center">The pie chart depicts the distribution of wave forms within the training data.
-              As for the scatter plot, the green dots represent accurate predictions and the red X's represent incorrect. The conclusion is that our model is not adept at predicting 3.0-4.0 waveforms or any greater than ~5.5.
+              As for the scatter plot, the green dots represent accurate predictions and the red X's represent
+              incorrect. The conclusion is that our model is not adept at predicting 3.0-4.0 waveforms or any greater
+              than ~5.5.
             </p>
           </div>
+        </div>
+      </div>
+
+
     </div>
-      
 
-  </div>
-  
-  
-  <!-- Scripts -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Scripts -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
 
 </body>
 
