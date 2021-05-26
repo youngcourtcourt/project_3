@@ -25,24 +25,23 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
 // Load data from hours-of-tv-watched.csv
-d3.csv("../data/DamageDataSample.csv").then(function(damageData) {
-
-  console.log(damageData);
+d3.json("/api/v1.0/county10_data").then(function(damageData) {
+  ;
 
   // Cast the hours value to a number for each piece of tvData
   damageData.forEach(function(d) {
-    d.Total_Damaging_Events = +d.Total_Damaging_Events;
+    d.total_damaging_events = +d.total_damaging_events;
   });
 
   // Configure a band scale for the horizontal axis with a padding of 0.1 (10%)
   var xBandScale = d3.scaleBand()
-    .domain(damageData.map(d => d.County_Name))
+    .domain(damageData.map(d => d.county))
     .range([0, chartWidth])
     .padding(0.5);
 
   // Create a linear scale for the vertical axis.
   var yLinearScale = d3.scaleLinear()
-    .domain([0, d3.max(damageData, d => d.Total_Damaging_Events)])
+    .domain([0, d3.max(damageData, d => d.total_damaging_events)])
     .range([chartHeight, 0]);
 
   // Create two new functions passing our scales in as arguments
@@ -66,11 +65,12 @@ d3.csv("../data/DamageDataSample.csv").then(function(damageData) {
     .enter()
     .append("rect")
     .attr("class", "bar")
-    .attr("x", d => xBandScale(d.County_Name))
-    .attr("y", d => yLinearScale(d.Total_Damaging_Events))
+    .attr("x", d => xBandScale(d.county))
+    .attr("y", d => yLinearScale(d.total_damaging_events))
     .attr("width", xBandScale.bandwidth())
-    .attr("height", d => chartHeight - yLinearScale(d.Total_Damaging_Events));
+    .attr("height", d => chartHeight - yLinearScale(d.total_damaging_events));
 
 }).catch(function(error) {
   console.log(error);
-});
+})
+;

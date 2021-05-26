@@ -79,6 +79,12 @@ class county_data(Base):
     longitude = Column(Float)
     radius = Column(Float)
 
+class county10_data(Base):
+    __tablename__ = 'County10'
+    id = Column(Integer, primary_key=True)
+    county = Column(String(255))
+    total_damaging_events = Column(Float)
+
 # # Reflect an existing database into a new model
 # Base = automap_base()
 
@@ -119,7 +125,7 @@ def playground():
 
 @app.route("/predict", methods=['GET', 'POST'])
 def predict():
-    
+
     input_list = []
 
     if request.method == 'POST':
@@ -271,6 +277,25 @@ def county():
         county_data_list.append(county_data_dict)
     
     return jsonify(county_data_list)
+
+@app.route("/api/v1.0/county10_data")
+def county10():
+    print("Server access top 10 county data")
+    s = Session(bind=engine)
+
+    results = s.query(county10_data.id, county10_data.county, county10_data.total_damaging_events)
+
+    s.close()
+
+    county10_data_list = []
+    for id, county, total_damaging_events in results:
+        county10_data_dict = {}
+        county10_data_dict["id"] = id
+        county10_data_dict["county"] = county
+        county10_data_dict["total_damaging_events"] = total_damaging_events
+        county10_data_list.append(county10_data_dict)
+    
+    return jsonify(county10_data_list)
 
 if __name__=="__main__":
     app.run(debug = True)
