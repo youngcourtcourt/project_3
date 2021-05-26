@@ -35,12 +35,12 @@
     background-color: #fffeb8;
     box-shadow: -5px 5px teal;
     margin: 4%;
+    padding: 3%;
   }
 
   .header{
     font-family: 'Spartan', sans-serif;
     font-size: 25px;
-    padding: 10px;
   }
 
   .caption-box{
