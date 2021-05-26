@@ -10,6 +10,7 @@ var margin = {
   left: 100
 };
 
+
 var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
 
@@ -102,7 +103,7 @@ d3.json("/api/v2.0/quake_data").then(function(quakers2shakers, err) {
   // parse data
   quakers2shakers.forEach(function(data) {
     data.magnitude = +data.magnitude;
-    data.aid_usd_mil = +data.aid_usd_mil;
+    data.aid_usd_mil = +data.aid_us_mil;
     data.pop_mil = +data.pop_mil;
   });
 
@@ -111,7 +112,7 @@ d3.json("/api/v2.0/quake_data").then(function(quakers2shakers, err) {
 
   // Create y scale function
   var yLinearScale = d3.scaleLinear()
-    .domain([0, d3.max(quakers2shakers, d => d.aid_usd_mil)])
+    .domain([0, d3.max(quakers2shakers, d => d.aid_us_mil)])
     .range([height, 0])
 
   // Create initial axis functions
@@ -134,7 +135,7 @@ d3.json("/api/v2.0/quake_data").then(function(quakers2shakers, err) {
     .enter()
     .append("circle")
     .attr("cx", d => xLinearScale(d[chosenXAxis]))
-    .attr("cy", d => yLinearScale(d.aid_usd_mil))
+    .attr("cy", d => yLinearScale(d.aid_us_mil))
     .attr("r", 15)
     .attr("fill", "red")
     .attr("opacity", ".5");
