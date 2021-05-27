@@ -105,9 +105,9 @@
   font-family: 'Spartan', sans-serif;
   border-radius: 10px;
   font-size: 20px;
-  box-shadow: 2px 2px #91b6b4;
+  box-shadow: 2px 2px rgb(247, 107, 83);
   margin-left: 100px;
-  border-color: #D0F7F5;
+  border-color: rgb(247, 107, 83);
   cursor: pointer;
 }
 

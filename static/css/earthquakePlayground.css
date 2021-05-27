@@ -70,7 +70,7 @@
   }
 
   .magnitude{
-    background-image: url("../styleElements/magnitude.svg");
+    background-image: url("../styleElements/magnitude2.svg");
     background-repeat: no-repeat;
     background-size:80%;
     background-position-x: center;
@@ -79,7 +79,7 @@
   }
 
   .depth{
-    background-image: url("../styleElements/depth.svg");
+    background-image: url("../styleElements/depth2.svg");
     background-repeat: no-repeat;
     background-size:80%;
     background-position-x: center;
@@ -87,7 +87,7 @@
   }
 
   .distance{
-    background-image: url("../styleElements/distance.svg");
+    background-image: url("../styleElements/distance2.svg");
     background-repeat: no-repeat;
     background-size:90%;
     background-position-x: center;
@@ -95,7 +95,7 @@
   }
 
   .azimuthal{
-    background-image: url("../styleElements/azimuthalGap.svg");
+    background-image: url("../styleElements/azimuthalGap2.svg");
     background-repeat: no-repeat;
     background-size:80%;
     background-position-x: center;
@@ -103,7 +103,7 @@
   }
 
   .rms{
-    background-image: url("../styleElements/rootMeanSquare.svg");
+    background-image: url("../styleElements/rootMeanSquare2.svg");
     background-repeat: no-repeat;
     background-size:80%;
     background-position-x: center;
@@ -122,7 +122,7 @@
   .icon-box{
     height: 100px;
     width: 100px;
-    background-color: #f3e4aa;
+    background-color: #f2faab;
     padding-left: 16%;
     padding-top: 15%;
     border-radius: 6px;
