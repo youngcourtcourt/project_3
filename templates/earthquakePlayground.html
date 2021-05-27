@@ -48,7 +48,7 @@
       <p class="lead left">Play with quakes!</p>
     </div>
   </div>
-  
+
   <div class="containter">
     <div class="row">
       <div class='col-md-4'>
@@ -63,9 +63,9 @@
             <div class="info-box">
               <p>A number that characterizes the relative size of an earthquake</p>
               <form id="predict_form" action="{{ url_for('predict')}}" method="POST">
-              <input class="form-control form-control-md" name ="magnitude" min="0.0" max="10.0" step="0.1" type="number"
-            placeholder="Magnitude">
-          <!-- </form> -->
+                <input class="form-control form-control-md" name="magnitude" min="0.0" max="10.0" step="0.1"
+                  type="number" placeholder="Magnitude">
+                <!-- </form> -->
             </div>
           </div>
         </div>
@@ -81,8 +81,9 @@
             <div class="info-box">
               <p>In seismology, the depth refers to the depth at which an earthquake occurs.</p>
               <!-- <form id="predict_form" action="{{ url_for('predict')}}" method="POST"> -->
-              <input class="form-control form-control-md" name="depth" min="0.0" max="645" step="15" type="number" placeholder="Depth">
-            <!-- </form> -->
+              <input class="form-control form-control-md" name="depth" min="0.0" max="645" step="15" type="number"
+                placeholder="Depth">
+              <!-- </form> -->
             </div>
           </div>
         </div>
@@ -99,8 +100,8 @@
               <p>The distance of the seismic recording station from the earthquake</p>
               <!-- <form id="predict_form" action="{{ url_for('predict')}}" method="POST"> -->
               <input class="form-control form-control-md" name="distance" min="0" max="65" step="5" type="number"
-            placeholder="Distance to Epicenter">
-          <!-- </form> -->
+                placeholder="Distance to Epicenter">
+              <!-- </form> -->
             </div>
           </div>
         </div>
@@ -117,8 +118,8 @@
               <p>The angular measurement between the earthquake and a celestial body.</p>
               <!-- <form id="predict_form" action="{{ url_for('predict')}}" method="POST"> -->
               <input class="form-control form-control-md" name="azimuthal" min="10" max="360" step="20" type="number"
-            placeholder="Azimuthal Gap">
-          <!-- </form> -->
+                placeholder="Azimuthal Gap">
+              <!-- </form> -->
             </div>
           </div>
         </div>
@@ -133,10 +134,10 @@
           <div class="col-md-8">
             <div class="info-box">
               <p>The root mean square is defined as the square root of the mean square.</p>
-          <!-- <form id="predict_form" action="{{ url_for('predict')}}" method="POST"> -->
-              <input class="form-control form-control-md" name="root_mean" min="0.00" max="13.90" step="0.10" type="number"
-            placeholder="Root Mean Square">
-          </form>
+              <!-- <form id="predict_form" action="{{ url_for('predict')}}" method="POST"> -->
+              <input class="form-control form-control-md" name="root_mean" min="0.00" max="13.90" step="0.10"
+                type="number" placeholder="Root Mean Square">
+              </form>
             </div>
           </div>
         </div>
@@ -145,12 +146,10 @@
 
 
       </div>
-      
-      <div class='col-md-8'>
-        <br>
-        <br>
-        <br>
-        <svg class="img-overlay-wrap" viewBox="0 0 400 400">
+
+      <div class='col-md-6'>
+       
+        <svg class="earth" viewBox="0 0 400 400">
 
 
           <circle class="mlCircle" cx="200" cy="200" r="150" stroke="none" fill="#F7DC6F" />
@@ -166,6 +165,8 @@
     <div class="playground"></div>
 
     <div class="grass">
+        
+      </div>
 
     </div>
     <!-- </div> -->

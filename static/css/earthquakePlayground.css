@@ -17,6 +17,12 @@
     background-color: #B8E8FF;
     
   }
+
+  .waveform-box{
+    height: 80px;
+    background-color: #9bc996;
+    
+  }
   
   #waveform{
     font-size: 100px;
@@ -38,7 +44,7 @@
     background-repeat: no-repeat;
     height: 500px;
     margin-top: -450px;
-    margin-left: 20px;
+    margin-left: 50%;
     margin-bottom: -200px;
     position: sticky;
     z-index: 1;
@@ -115,9 +121,9 @@
     margin-top: -5px;
   }
 
-  .img-overlay-wrap{
+  .earth{
     background-image: url("../styleElements/earth.svg");
-    height: 50%;
+    height: 40%;
     display: block;
     margin-left: auto;
     margin-right: auto;

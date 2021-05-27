@@ -81,7 +81,7 @@
             <h3>What's A Damaging Event?</h3>
           </div>
           <div class="yellow-box">
-            <p>The USGS regards earthquakes at and above 5.0 as damaging earthquakes. 
+            <p>The USGS regards earthquakes at and above 5.0 as damaging earthquakes.
               For our purposes we will adopt the same guidelines.</p>
           </div>
         </div>
@@ -130,21 +130,35 @@
         <div class="row">
         </div>
       </div>
-      
+
 
     </div>
     <!-- ##### UNCOMMENT FOR RYAN'S CHARTS ##### -->
     <div class="row">
-      <div class="more-box">
-        <h2>See How Your County Stacks Up..</h2>
-        <br>
-        <p class="center">Earthquake Damage By Counties Most Affected: Top 10</p>
-        <div class="barChartBox">
-          <div id="barChart"></div>
+      <div class="col-md-6">
+        <div class="more-box">
+          <h2>See How Your County Stacks Up..</h2>
+          <br>
+          <p class="center">Earthquake Damage By Counties Most Affected: Top 10</p>
+          <div class="barChartBox">
+            <div id="barChart"></div>
+
+          </div>
+
+
         </div>
-        <br>
-        <br>
       </div>
+      <div class="col-md-4">
+        <br>
+        <img class="tableau" src="../static/visualizations/tableauCircles.png">
+        
+      </div>
+      </div>
+
+
+        <!-- <img class="tableau" src="../static/visualizations/countySpheres.png">  -->
+      </div>
+
     </div>
 
     <!-- Scripts -->
@@ -160,19 +174,19 @@
       crossorigin="anonymous"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
 
-<!--D3 cdn-->
-<script src="https://d3js.org/d3.v5.min.js"></script>
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-crossorigin=""></script>
-<!-- Our scripts -->
-<!-- <script type="text/javascript" src="../static/js/config.js"></script> -->
-<!-- <script type="text/javascript" src="../static/js/caliMap.js"></script> -->
-<script src="../static/js/damageBarChart.js"></script>
-<script type="text/javascript" src="{{ url_for('static',filename='js/config.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static',filename='js/caliMap.js') }}"></script>
+    <!--D3 cdn-->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+      integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+      crossorigin=""></script>
+    <!-- Our scripts -->
+    <!-- <script type="text/javascript" src="../static/js/config.js"></script> -->
+    <!-- <script type="text/javascript" src="../static/js/caliMap.js"></script> -->
+    <script src="../static/js/damageBarChart.js"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/config.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/caliMap.js') }}"></script>
 
 </body>
 

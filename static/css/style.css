@@ -215,3 +215,10 @@ h3 {
   background-color: white;
   border-radius: 6px;
 }
+
+.tableau{
+  background-color: white;
+  border-radius: 6px;
+  width: 550px;
+  margin: 5%;
+}
