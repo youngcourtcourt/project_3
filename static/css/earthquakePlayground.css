@@ -59,29 +59,55 @@
     margin-top: -350px;
   }
 
+  .light-grass{
+    background-color: #92d48a;
+    width: 100%;
+    height: 500px;
+    z-index: -2;
+    /* background-image: url("../styleElements/playgroundBackground2.svg");
+    background-repeat: repeat-x; */
+    margin-top: -350px;
+  }
+
   .magnitude{
     background-image: url("../styleElements/magnitude.svg");
     background-repeat: no-repeat;
+    background-size:80%;
+    background-position-x: center;
+    background-position-y: center;
+
   }
 
   .depth{
     background-image: url("../styleElements/depth.svg");
     background-repeat: no-repeat;
+    background-size:80%;
+    background-position-x: center;
+    background-position-y: center;
   }
 
   .distance{
     background-image: url("../styleElements/distance.svg");
     background-repeat: no-repeat;
+    background-size:90%;
+    background-position-x: center;
+    background-position-y: center;
   }
 
   .azimuthal{
     background-image: url("../styleElements/azimuthalGap.svg");
     background-repeat: no-repeat;
+    background-size:80%;
+    background-position-x: center;
+    background-position-y: center;
   }
 
   .rms{
     background-image: url("../styleElements/rootMeanSquare.svg");
     background-repeat: no-repeat;
+    background-size:80%;
+    background-position-x: center;
+    background-position-y: center;
   }
 
   .info-box{
@@ -90,7 +116,7 @@
     background-color: #f5d349;
     padding: 1%;
     border-radius: 6px;
-    box-shadow:5px 5px #a8d3d1;
+    box-shadow:5px 5px #8bafad;
   }
 
   .icon-box{
@@ -100,7 +126,7 @@
     padding-left: 16%;
     padding-top: 15%;
     border-radius: 6px;
-    box-shadow:5px 5px #a8d3d1;
+    box-shadow:5px 5px #8bafad;;
     margin-left: 20px;
   }
 
