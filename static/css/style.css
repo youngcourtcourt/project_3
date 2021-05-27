@@ -217,8 +217,13 @@ h3 {
 }
 
 .tableau{
-  background-color: white;
-  border-radius: 6px;
-  width: 550px;
+  height: 600px;
+}
+
+.tableau-box{
+  background-color: #58bbb6;
+  width: 650px;
+  padding: 5%;
   margin: 5%;
+  /* background-image: url("../visualizations/tableauCircles.png") white; */
 }
